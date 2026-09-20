@@ -36,7 +36,8 @@
     "playwright": "1.63.0",
     "typescript": "5.9.3",
     "vite": "6.4.3",
-    "vite-tsconfig-paths": "5.1.4"
+    "vite-tsconfig-paths": "5.1.4",
+    "wrangler": "4.135.0"
   },
   "license": "PolyForm-Strict-1.0.0"
 }

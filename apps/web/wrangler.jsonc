@@ -6,6 +6,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "stemma",
   "compatibility_date": "2025-04-04",
+  // The zone is in the same Cloudflare account, so wrangler creates the
+  // DNS record itself on deploy. The workers.dev URL keeps answering.
+  "routes": [{ "pattern": "stemma.khanahmad.com", "custom_domain": true }],
   "assets": {
     "directory": "./build-demo/client",
     // Every real route is prerendered; anything else falls through to the
