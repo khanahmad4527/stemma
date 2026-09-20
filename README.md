@@ -1,33 +1,157 @@
 # Stemma
 
-A multi-tenant genealogy backend on **Directus 12**, where a family tree is
-stored as what it actually is: a directed acyclic graph.
+**A place to record a family's history properly — including all the parts that
+do not fit in a neat tree.**
 
-The name is the Roman word for the thing itself. Patrician families hung wax
-ancestor masks in the atrium, joined by painted lines showing descent; the
-display was the *stemma*. It survives in textual criticism, where a *stemma
-codicum* is the family tree of manuscript copies.
+![A family tree drawn as a tree, in gold on a dark ground](docs/images/canopy.webp)
 
-**Status:** the data model is built and proven — **20 collections**, 29
-constraints / 52 triggers / 36 indexes in Postgres, and a **118-check suite**
-that passes both directions and checks this page's own numbers. There is a
-web app that signs in against Directus and renders the tree four ways, and
-the Data Studio is configured rather than left at its defaults. Three
-extensions: the person graph, the date parser, and GEDCOM 7 export. Not built:
-the readable-error hook. An anonymous public site is a **non-goal**; the public
-policy that would serve one stays, because it is what proves the privacy
-boundary.
+---
+
+## What this is, in plain words
+
+Most family-tree software asks you for a person, their mother and their father,
+and then quietly falls apart the moment a real family turns up. People adopt.
+Step-parents raise children. Couples never marry and have children anyway.
+Second cousins marry each other, which means one great-grandmother ends up in
+two places on the same chart. A birth certificate and a census disagree about
+the year somebody was born, and both of them are evidence.
+
+Stemma is built for those families, which is to say all of them.
+
+You put in the people and how they are connected. It draws the family four
+different ways, keeps a note of where every fact came from, hides living
+relatives from anyone who should not see them, and will hand the whole thing
+back to you as a standard file that Ancestry or FamilySearch can read — so
+nothing is ever locked in here.
+
+**The name.** In ancient Rome a family hung wax masks of its ancestors in the
+hallway, joined by painted lines showing who descended from whom. The display
+was called a *stemma*. The word survived: scholars still use a *stemma codicum*
+for the family tree of a hand-copied manuscript.
+
+**Who it is for.** This is a working reference build rather than a product you
+can sign up to. There is no hosted version. If you want to run it, everything
+you need is in this repository and the instructions are further down.
+
+### What it does
+
+|  |  |
+|---|---|
+| **Holds an awkward family** | Adoption, step-parents, foster placements, same-sex parents, donor conception, surrogacy, four parents on one child, cousins who married. None of these are special cases here |
+| **Keeps the evidence, not just the answer** | Two records disagree about a birth year? Both are kept, each with the source it came from, and you say which one you believe and why |
+| **Records dates the way sources write them** | *about 1850*, *before 1900*, *between 1852 and 1855*. The original words are never thrown away |
+| **Protects living people** | Anyone still alive is hidden from public view — not just their name, but every record that would reveal them, down to the street they live on |
+| **Draws it four ways** | An ancestor chart, a fan, an illustrated tree, and a descendant chart |
+| **Lets you take it with you** | A single address exports the whole family as a GEDCOM file, the standard every genealogy program reads. There is no button for it in the site yet — it is a link you open |
+
+---
+
+## Why a family tree is not really a tree
+
+A tree, in the everyday sense, branches outward and never joins back up. Family
+trees do join back up, constantly.
+
+If two cousins marry, their children descend from the same great-grandparents
+down two different paths. That one ancestor now belongs in two places on the
+chart. Genealogists call it *pedigree collapse*, and in communities where people
+married locally for generations it is not unusual — it is the normal case.
+
+So Stemma does not store a tree. It stores every relationship as its own small
+fact — *this person is a parent of that person, in this way* — and works the
+shape out when it draws. A person can appear twice on one chart because they
+genuinely were in two places on it.
+
+---
+
+## What it looks like
+
+**The pedigree** — ancestors, oldest at the top. Most genealogy software prints
+this sideways; here it reads downward, the way people picture a family, so a
+deep line scrolls instead of running off the edge of the page.
+
+![Nine generations of ancestors, oldest at the top](docs/images/pedigree.webp)
+
+**The descendant chart** — everyone who came *from* a couple. Note that it lays
+out couples rather than individuals: draw only blood relatives and the person
+who married into the family never appears at all.
+
+![A descendant chart laying out couples, with the person panel open](docs/images/descendants.webp)
+
+The square brackets around a name mean adopted. The dashed outline means married
+in. The small dot means that person is alive, and everything about them is hidden
+from the public view.
+
+**The tree** — the same family drawn as an actual tree, with portraits hanging
+from the boughs. That is the picture at the top of this page.
+
+**The fan** — generations as rings spreading out from one person.
+
+![A fan chart, generations as rings out from the root](docs/images/fan.webp)
+
+### Reading a chart without a key
+
+Every fact on a chart is carried by a **shape**, never by colour alone: a square
+is male, a circle female, a diamond means nobody recorded it, a diagonal stroke
+means the person has died, and square brackets mean adopted. That is a published
+medical standard, not an invention, and it means a chart still makes sense
+photocopied, printed in black and white, or read by somebody colour-blind.
+Colour is then free to be cheerful, because it is not carrying anything.
+
+---
+
+## The admin side
+
+Behind the website is Directus, where the records are actually edited.
+
+Each person's page shows their immediate family, drawn with the same symbols,
+and every name is a link:
+
+![The custom person-graph interface inside the Directus admin](docs/images/person-graph.webp)
+
+It is deliberately read-only. Everything it shows already lives in the
+relationship records, and letting you edit from here would create a second way
+to write the same fact.
+
+The admin itself is set up rather than left at its defaults — collections
+grouped into folders, saved views for the questions you actually ask, and a
+system panel on every record that answers "who changed this, and when":
+
+![The Directus admin with nav folders and saved views](docs/images/data-studio.webp)
+
+---
+
+## Status, in numbers
+
+For the technically minded, and checked automatically — the test suite reads
+this page and fails if any figure below has drifted from the running system.
+
+**20 collections**, 29 constraints / 52 triggers / 36 indexes in Postgres, and a
+**118-check suite** that passes in both directions. A website that signs in and
+renders the tree in four layouts across three themes. Three Directus extensions:
+the person graph, the date parser, and GEDCOM 7 export.
+
+Not built: the readable-error hook. An anonymous public site is a **non-goal**;
+the public policy that would serve one stays, because it is what proves the
+privacy boundary.
+
+---
+
+# How it is built
+
+*Everything above is the product. Everything below is the engineering — the
+data model, the database rules, the access model and the checks. If you came
+to look at the Directus work, start here.*
 
 ---
 
 ## The one decision everything else follows from
 
-A family tree is not a tree.
-
-Cousins marry. Pedigree collapse puts the same ancestor in two positions of one
-chart, and in endogamous communities that is the norm rather than the exception.
-The storage must not care, and the renderer must cope with one person appearing
-several times in one diagram.
+A family tree is a **directed acyclic graph**, not a tree — which is the plain
+point made above, stated the way the schema has to take it. Cousins marry,
+pedigree collapse puts one ancestor in two positions of one chart, and in
+endogamous communities that is the norm rather than the exception. The storage
+must not care, and the renderer must cope with one person appearing several
+times in one diagram.
 
 Which rules out the schema every hobby genealogy app starts with:
 
@@ -323,8 +447,7 @@ Real trees sit entirely inside the flat part of that.
 
 A custom Directus **interface** on the person form: parents, partners and
 children drawn from the edges, with the pedigree symbols, navigating on click.
-
-![the person-graph interface](docs/person-graph.png)
+The screenshot is [further up](#the-admin-side).
 
 It stores nothing — the field is an alias with no column, because everything it
 draws is already in `parentage` and `couples`, and a second copy would be a
