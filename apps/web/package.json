@@ -9,7 +9,8 @@
     "demo:build": "VITE_DEMO=1 react-router build",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc --noEmit",
-    "contrast": "node checks/contrast.mjs"
+    "contrast": "node checks/contrast.mjs",
+    "demo:deploy": "pnpm demo:build && wrangler deploy"
   },
   "dependencies": {
     "@react-router/node": "7.18.4",

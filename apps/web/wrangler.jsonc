@@ -1,0 +1,15 @@
+{
+  // The static showcase only. `pnpm demo:build` prerenders the app into
+  // build/client and this serves those files — there is no `main`, so no
+  // Worker code runs at all. The real app is server-rendered against
+  // Directus and is not deployed from here.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stemma",
+  "compatibility_date": "2025-04-04",
+  "assets": {
+    "directory": "./build-demo/client",
+    // Every real route is prerendered; anything else falls through to the
+    // app shell, which renders its own not-found rather than Cloudflare's.
+    "not_found_handling": "single-page-application"
+  }
+}

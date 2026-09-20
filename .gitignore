@@ -35,3 +35,4 @@ bootstrap/src/family.ts
 # Extension build output. Directus loads dist/ at runtime, so a fresh
 # clone runs `pnpm build:extensions` before `docker compose up`.
 extensions/*/dist/
+apps/web/build-demo/

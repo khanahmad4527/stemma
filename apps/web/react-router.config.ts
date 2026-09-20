@@ -28,6 +28,12 @@ type Snapshot = { tree: Record<string, { data: { persons: Array<{ id: string }> 
 export default (demo
   ? {
       ssr: false,
+      // Its own directory, because the two builds would otherwise write
+      // the same `build/client` and the last one to run would win. That
+      // is not hypothetical: a verification run of the normal build
+      // silently replaced the prerendered HTML, and the first deploy put
+      // up 29 files instead of 329 and answered 404 for every page.
+      buildDirectory: "build-demo",
       prerender(): string[] {
         const snapshot = JSON.parse(readFileSync("demo-data/snapshot.json", "utf8")) as Snapshot;
         const paths = ["/"];
