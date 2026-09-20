@@ -1,33 +1,25 @@
 import { Form, Link } from "react-router";
 import type { Route } from "./+types/home";
 import { withDirectus } from "~/lib/directus.server";
+import { loadTrees } from "~/lib/queries.server";
+import { DEMO, snapshot } from "~/lib/demo.server";
 import { ThemePicker } from "~/components/Theme";
+import { IS_DEMO } from "~/lib/demo";
 
 export function meta() {
-  return [{ title: "Your trees · Stemma" }];
+  return [{ title: IS_DEMO ? "Stemma — a demo" : "Your trees · Stemma" }];
 }
 
 type TreeRow = { id: string; name: string; slug: string; is_public: boolean };
 type Me = { first_name: string | null; last_name: string | null; email: string };
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const { result, setCookie } = await withDirectus(request, async (get) => {
-    // The member policy's filter does the work: this asks for every tree
-    // and Directus returns only the ones they belong to.
-    const [trees, me] = await Promise.all([
-      get<TreeRow[]>("/items/trees?limit=-1&fields=id,name,slug,is_public&sort=name"),
-      get<Me>("/users/me?fields=first_name,last_name,email"),
-    ]);
-    const counts = await Promise.all(
-      trees.map(async (t) => {
-        const agg = await get<Array<{ count: { id: string } }>>(
-          `/items/persons?aggregate%5Bcount%5D=id&filter%5Btree%5D%5B_eq%5D=${t.id}`,
-        );
-        return [t.id, Number(agg[0]?.count.id ?? 0)] as const;
-      }),
-    );
-    return { trees, me, counts: Object.fromEntries(counts) as Record<string, number> };
-  });
+  if (DEMO) {
+    return new Response(JSON.stringify((await snapshot()).trees), {
+      headers: { "content-type": "application/json" },
+    });
+  }
+  const { result, setCookie } = await withDirectus(request, loadTrees);
   return new Response(JSON.stringify(result), {
     headers: { "content-type": "application/json", ...(setCookie ? { "Set-Cookie": setCookie } : {}) },
   });
@@ -42,13 +34,18 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <Link className="mark" to="/">Stemma</Link>
         <div className="spacer" />
         <ThemePicker />
-        <span className="who">{who}</span>
-        <Form method="post" action="/logout"><button className="btn quiet" type="submit">Sign out</button></Form>
+        {/* No session to show or end when the data is frozen into the page. */}
+        {!IS_DEMO && <span className="who">{who}</span>}
+        {!IS_DEMO && (
+          <Form method="post" action="/logout"><button className="btn quiet" type="submit">Sign out</button></Form>
+        )}
       </header>
       <main className="picker">
-        <h1>Your trees</h1>
+        <h1>{IS_DEMO ? "Three families" : "Your trees"}</h1>
         <p className="lede">
-          {trees.length === 1 ? "One tree" : `${trees.length} trees`} you are a member of.
+          {IS_DEMO
+            ? "Invented families, seeded to exercise the awkward cases — pedigree collapse, adoption, four parents, a disproven line. Frozen from a live instance; nothing here is a real person."
+            : `${trees.length === 1 ? "One tree" : `${trees.length} trees`} you are a member of.`}
         </p>
         {trees.length === 0 ? (
           <p className="empty">

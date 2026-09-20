@@ -2,18 +2,19 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Form, Link, useFetcher } from "react-router";
 import type { Route } from "./+types/tree";
 import { withDirectus } from "~/lib/directus.server";
+import { loadTree, type TreeRow } from "~/lib/queries.server";
+import { DEMO, snapshot } from "~/lib/demo.server";
 import {
   buildGraph, layoutPedigree, layoutFan, layoutCanopy, layoutDescendants, kinTest, lifespan, BOX_W, BOX_H,
-  type Person, type Edge, type Union, type TreeData,
+  type Person, type TreeData,
 } from "~/lib/tree";
 import { Chart, type ChartHandle, type Rect } from "~/components/Chart";
 import { Boxes, Fan, Canopy, Families, sexPath } from "~/components/Layouts";
 import { ThemePicker, useOrnate } from "~/components/Theme";
+import { IS_DEMO } from "~/lib/demo";
 import type { PersonDetail } from "./person";
 
 /* ── loading ───────────────────────────────────────────────────────── */
-
-type TreeRow = { id: string; name: string; slug: string; home_person: string | null };
 
 export function meta({ data }: Route.MetaArgs) {
   const name = (data as { tree?: TreeRow } | undefined)?.tree?.name;
@@ -22,51 +23,12 @@ export function meta({ data }: Route.MetaArgs) {
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const slug = params.slug;
-  const { result, setCookie } = await withDirectus(request, async (get) => {
-    const trees = await get<TreeRow[]>(
-      `/items/trees?limit=1&fields=id,name,slug,home_person&filter%5Bslug%5D%5B_eq%5D=${encodeURIComponent(slug)}`);
-    const tree = trees[0];
-    // A tree that does not exist and a tree you are not in look the same
-    // from here, which is the correct answer to both.
-    if (!tree) throw new Response("Not found", { status: 404 });
-
-    const scope = `filter%5Btree%5D%5B_eq%5D=${tree.id}`;
-    const [persons, edges, unions, vitals] = await Promise.all([
-      get<Person[]>(`/items/persons?limit=-1&${scope}&sort=sort_name&fields=id,public_id,display_name,sort_name,sex_recorded,is_living,portrait,multiple_birth`),
-      get<Edge[]>(`/items/parentage?limit=-1&${scope}&fields=parent,child,lineage,status`),
-      get<Union[]>(`/items/couples?limit=-1&${scope}&fields=id,person_a,person_b`),
-      // Only the two dates a chart label has room for. The rest of a
-      // person's events load with their panel.
-      get<Array<{ subject_person: string; date_earliest: string | null; is_conclusion: boolean;
-                  type: { code: string } | null; place: { name: string } | null }>>(
-        `/items/events?limit=-1&${scope}&filter%5Btype%5D%5Bcode%5D%5B_in%5D=birth,death` +
-        `&fields=subject_person,date_earliest,is_conclusion,type.code,place.name`),
-    ]);
-
-    // The conclusion wins; failing that, the earliest assertion — which
-    // is what the Genealogical Proof Standard means by one of several
-    // being concluded, rendered down to the four characters a box holds.
-    const born = new Map<string, string>(), died = new Map<string, string>(), bplace = new Map<string, string>();
-    for (const e of vitals) {
-      if (!e.subject_person || !e.date_earliest) continue;
-      const into = e.type?.code === "death" ? died : born;
-      const have = into.get(e.subject_person);
-      if (!have || e.is_conclusion) into.set(e.subject_person, e.date_earliest);
-      if (e.type?.code === "birth" && e.place?.name && (!bplace.has(e.subject_person) || e.is_conclusion)) {
-        bplace.set(e.subject_person, e.place.name);
-      }
-    }
-    for (const p of persons) {
-      p.born = born.get(p.id) ?? null;
-      p.died = died.get(p.id) ?? null;
-      p.birth_place = bplace.get(p.id) ?? null;
-    }
-
-    const data: TreeData = {
-      slug: tree.slug, name: tree.name, persons, edges, unions, homePersonId: tree.home_person,
-    };
-    return { tree, data };
-  });
+  if (DEMO) {
+    const frozen = (await snapshot()).tree[slug];
+    if (!frozen) throw new Response("Not found", { status: 404 });
+    return new Response(JSON.stringify(frozen), { headers: { "content-type": "application/json" } });
+  }
+  const { result, setCookie } = await withDirectus(request, (get) => loadTree(get, slug));
   return new Response(JSON.stringify(result), {
     headers: { "content-type": "application/json", ...(setCookie ? { "Set-Cookie": setCookie } : {}) },
   });
@@ -249,7 +211,9 @@ export default function TreeView({ loaderData }: Route.ComponentProps) {
         <Search persons={data.persons} onPick={reroot} />
         <div className="spacer" />
         <ThemePicker />
-        <Form method="post" action="/logout"><button className="btn quiet" type="submit">Sign out</button></Form>
+        {!IS_DEMO && (
+          <Form method="post" action="/logout"><button className="btn quiet" type="submit">Sign out</button></Form>
+        )}
       </header>
 
       <div className="canvas">

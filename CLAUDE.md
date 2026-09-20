@@ -227,6 +227,16 @@ Write these in the README rather than leaving them as implied promises.
   export, an embed, a partner API — would be gated by. Deleting it to match a
   cancelled front end would remove the proof, not the feature.
 
+  **The static showcase is not that site.** `pnpm demo:snapshot` freezes
+  the three invented demo trees into `apps/web/demo-data/`, and
+  `pnpm demo:build` prerenders the same app against it with `ssr: false`
+  — flat files, no server, no database, no sign-in, nothing to keep
+  alive. There is no policy in it because there is no backend to apply
+  one; it is a screenshot that happens to pan and zoom. The snapshot
+  names the three slugs in a literal rather than exporting what it finds,
+  so the author's own gitignored family is excluded by construction and
+  not by remembering to.
+
 ---
 
 ## Build order

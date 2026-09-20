@@ -576,6 +576,9 @@ pnpm verify                   # both directions, 118 checks
 pnpm theme                    # every admin colour, against the surface it sits on
 
 pnpm web                      # the site, on http://localhost:8060
+
+pnpm --filter @stemma/web demo:snapshot   # freeze the demo trees to JSON
+pnpm --filter @stemma/web demo:build      # prerender them — no server, no sign-in
 pnpm contrast                 # WCAG AA across all three themes
 ```
 
