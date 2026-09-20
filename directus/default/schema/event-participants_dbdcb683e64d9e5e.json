@@ -1,0 +1,870 @@
+{
+  "collection": "event_participants",
+  "definition": {
+    "collection": "event_participants",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "event_participants",
+      "color": "#2A78D6",
+      "display_template": "{{person.display_name}} — {{role}}",
+      "group": "stemma_events",
+      "hidden": false,
+      "icon": "groups",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_note_event_participants",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 22,
+      "sort_field": null,
+      "status": "active",
+      "translations": null,
+      "unarchive_value": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "event_participants"
+    }
+  },
+  "fields": [
+    {
+      "collection": "event_participants",
+      "field": "date_created",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 92,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "event_participants",
+      "field": "date_updated",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 94,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "event_participants",
+      "field": "detail",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "detail",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_participant_detail",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "detail",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_participants",
+      "field": "event",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{type.label}} · {{date_original}}"
+        },
+        "field": "event",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{type.label}} · {{date_original}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "events",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "event",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_participants",
+      "field": "id",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "id",
+        "group": "system",
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_system_id",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 91,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": "gen_random_uuid()",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": true,
+        "is_unique": true,
+        "max_length": null,
+        "name": "id",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_participants",
+      "field": "notes",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "format": true
+        },
+        "field": "notes",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "$t:stemma_note_private_notes",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "text",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "notes",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "text"
+    },
+    {
+      "collection": "event_participants",
+      "field": "person",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{display_name}}"
+        },
+        "field": "person",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{display_name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": true,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "person",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_participants",
+      "field": "role",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_principal",
+              "value": "principal"
+            },
+            {
+              "text": "$t:stemma_c_spouse",
+              "value": "spouse"
+            },
+            {
+              "text": "$t:stemma_c_parent",
+              "value": "parent"
+            },
+            {
+              "text": "$t:stemma_c_child",
+              "value": "child"
+            },
+            {
+              "text": "$t:stemma_c_sibling",
+              "value": "sibling"
+            },
+            {
+              "text": "$t:stemma_c_witness",
+              "value": "witness"
+            },
+            {
+              "text": "$t:stemma_c_godparent",
+              "value": "godparent"
+            },
+            {
+              "text": "$t:stemma_c_sponsor",
+              "value": "sponsor"
+            },
+            {
+              "text": "$t:stemma_c_officiant",
+              "value": "officiant"
+            },
+            {
+              "text": "$t:stemma_c_informant",
+              "value": "informant"
+            },
+            {
+              "text": "$t:stemma_c_beneficiary",
+              "value": "beneficiary"
+            },
+            {
+              "text": "$t:stemma_c_executor",
+              "value": "executor"
+            },
+            {
+              "text": "$t:stemma_c_household_member",
+              "value": "household_member"
+            },
+            {
+              "text": "$t:stemma_c_employer",
+              "value": "employer"
+            },
+            {
+              "text": "$t:stemma_c_employee",
+              "value": "employee"
+            },
+            {
+              "text": "$t:stemma_c_enslaver",
+              "value": "enslaver"
+            },
+            {
+              "text": "$t:stemma_c_enslaved",
+              "value": "enslaved"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "field": "role",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_participant_role",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_principal",
+              "value": "principal"
+            },
+            {
+              "text": "$t:stemma_c_spouse",
+              "value": "spouse"
+            },
+            {
+              "text": "$t:stemma_c_parent",
+              "value": "parent"
+            },
+            {
+              "text": "$t:stemma_c_child",
+              "value": "child"
+            },
+            {
+              "text": "$t:stemma_c_sibling",
+              "value": "sibling"
+            },
+            {
+              "text": "$t:stemma_c_witness",
+              "value": "witness"
+            },
+            {
+              "text": "$t:stemma_c_godparent",
+              "value": "godparent"
+            },
+            {
+              "text": "$t:stemma_c_sponsor",
+              "value": "sponsor"
+            },
+            {
+              "text": "$t:stemma_c_officiant",
+              "value": "officiant"
+            },
+            {
+              "text": "$t:stemma_c_informant",
+              "value": "informant"
+            },
+            {
+              "text": "$t:stemma_c_beneficiary",
+              "value": "beneficiary"
+            },
+            {
+              "text": "$t:stemma_c_executor",
+              "value": "executor"
+            },
+            {
+              "text": "$t:stemma_c_household_member",
+              "value": "household_member"
+            },
+            {
+              "text": "$t:stemma_c_employer",
+              "value": "employer"
+            },
+            {
+              "text": "$t:stemma_c_employee",
+              "value": "employee"
+            },
+            {
+              "text": "$t:stemma_c_enslaver",
+              "value": "enslaver"
+            },
+            {
+              "text": "$t:stemma_c_enslaved",
+              "value": "enslaved"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "other",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "role",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_participants",
+      "field": "role_phrase",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "role_phrase",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_role_phrase",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "role_phrase",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_participants",
+      "field": "system",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "system",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": "$t:stemma_note_system_group",
+        "options": {
+          "headerIcon": "manage_history",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 90,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "event_participants",
+      "field": "tree",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "field": "tree",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_row_tree",
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "tree",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_participants",
+      "field": "user_created",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 93,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_participants",
+      "field": "user_updated",
+      "meta": {
+        "collection": "event_participants",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 95,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_participants"
+      },
+      "type": "uuid"
+    }
+  ],
+  "relations": [
+    {
+      "collection": "event_participants",
+      "field": "event",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "event_participants",
+        "many_field": "event",
+        "one_allowed_collections": null,
+        "one_collection": "events",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "participants",
+        "sort_field": null
+      },
+      "related_collection": "events",
+      "schema": {
+        "column": "event",
+        "constraint_name": "event_participants_event_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "events",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "event_participants"
+      }
+    },
+    {
+      "collection": "event_participants",
+      "field": "person",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "event_participants",
+        "many_field": "person",
+        "one_allowed_collections": null,
+        "one_collection": "persons",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "participations",
+        "sort_field": null
+      },
+      "related_collection": "persons",
+      "schema": {
+        "column": "person",
+        "constraint_name": "event_participants_person_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "event_participants"
+      }
+    },
+    {
+      "collection": "event_participants",
+      "field": "tree",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "event_participants",
+        "many_field": "tree",
+        "one_allowed_collections": null,
+        "one_collection": "trees",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "trees",
+      "schema": {
+        "column": "tree",
+        "constraint_name": "event_participants_tree_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "event_participants"
+      }
+    }
+  ],
+  "systemFields": []
+}

@@ -1,0 +1,578 @@
+/*
+ * ── The palette is computed, not picked ───────────────────────────────
+ *
+ * Every colour below comes out of a validated set, and two rules decided
+ * the structure:
+ *
+ * **Generations are ordinal, so they take ONE hue with monotone
+ * lightness** — not a rainbow. Position in a sequence is read from
+ * lightness; a hue per ring would spend the identity channel on
+ * something order already says, and no ordering of many hues survives
+ * the colour-blindness gate anyway.
+ *
+ * **Branch tints cap at three.** Colouring a pedigree by which line it
+ * descends from is categorical, and the four-hue set FAILS the
+ * normal-vision floor — yellow against orange comes out at ΔE 13.7,
+ * below the 15 needed for full-colour readers to tell them apart at all.
+ * Three clears every gate under all-pairs (worst ΔE 24.0 normal, 9.2
+ * CVD). A fourth line falls back to neutral rather than inventing a hue.
+ *
+ * And the load-bearing one: **colour never carries a fact by itself.**
+ * Sex is a shape, adoption is a bracket, death is a slash, a union of
+ * kin is a doubled line. Those come from the NSGC standardized pedigree
+ * nomenclature (Bennett et al., 2022) and they survive greyscale, a
+ * printer and every kind of colour-blindness. Colour is then free to be
+ * cheerful, which is all it is doing here.
+ */
+
+:root {
+  /* Garden — bright, and the default. */
+  --paper:      #FAFCF6;
+  --paper-sunk: #EEF5E8;
+  --paper-rise: #FFFFFF;
+  --ink:        #15251A;
+  --ink-soft:   #3A4F40;
+  --ink-faint:  #4C6755;   /* 6.0:1 on paper, 4.6:1 over a tinted medallion */
+  --ink-onnode: #4C6553;
+  --rule:       #DCEAD4;
+  --rule-firm:  #9CBA92;
+  --accent:     #2a78d6;
+  --accent-text:#1F66BE;   /* 5.5:1 — the same blue, stepped for text */
+  --accent-soft:#E3EEFA;
+  --accent-ink: #FFFFFF;
+  --brass:      #B4530F;   /* 4.8:1 — the root marker and the living pearl */
+  --gen:        #4FB05A;   /* the ordinal ramp's one hue */
+
+  --branch-1:   #2a78d6;
+  --branch-2:   #eb6834;
+  --branch-3:   #1baf7a;
+  --branch-n:   #9CBA92;   /* the fourth line and beyond */
+
+  --node-fill:  var(--paper-rise);
+  --node-edge:  #6E8E66;
+  --link:       #7FA576;
+  --canvas:     var(--paper-sunk);
+  --weave:      transparent;
+  --ornament:   0;
+
+  --font-serif: "Spectral", Iowan Old Style, Palatino, Georgia, serif;
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --r:  10px;
+  --r-s: 7px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --paper:      #14181A;
+    --paper-sunk: #0E1113;
+    --paper-rise: #1E2427;
+    --ink:        #EAF1EC;
+    --ink-soft:   #BDCCC1;
+    --ink-faint:  #8FA396;
+    --ink-onnode: #9FB2A5;
+    --rule:       #29322F;
+    --rule-firm:  #4A5853;
+    --accent:     #6FA8F0;
+    --accent-text:#6FA8F0;
+    --accent-soft:#1E2A38;
+    --accent-ink: #0B1116;
+    --brass:      #F09A4E;
+    --gen:        #4E9E62;
+    --branch-1:   #3987e5;
+    --branch-2:   #ef7b4d;
+    --branch-3:   #23c489;
+    --branch-n:   #5C6E66;
+    --node-edge:  #55685D;
+    --link:       #5C7166;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:      #14181A;
+  --paper-sunk: #0E1113;
+  --paper-rise: #1E2427;
+  --ink:        #EAF1EC;
+  --ink-soft:   #BDCCC1;
+  --ink-faint:  #8FA396;
+  --ink-onnode: #9FB2A5;
+  --rule:       #29322F;
+  --rule-firm:  #4A5853;
+  --accent:     #6FA8F0;
+  --accent-text:#6FA8F0;
+  --accent-soft:#1E2A38;
+  --accent-ink: #0B1116;
+  --brass:      #F09A4E;
+  --gen:        #4E9E62;
+  --branch-1:   #3987e5;
+  --branch-2:   #ef7b4d;
+  --branch-3:   #23c489;
+  --branch-n:   #5C6E66;
+  --node-fill:  var(--paper-rise);
+  --node-edge:  #55685D;
+  --link:       #5C7166;
+  --canvas:     var(--paper-sunk);
+  --weave:      transparent;
+  --ornament:   0;
+  color-scheme: dark;
+}
+
+/*
+ * Tapestry — gold thread on a blackened green ground.
+ *
+ * The ground is not black: a true black makes gold read as yellow
+ * plastic, where a very dark desaturated green reads as dyed wool and
+ * lets the metal sit on it.
+ */
+:root[data-theme="tapestry"] {
+  --paper:      #0C1411;
+  --paper-sunk: #070D0B;
+  --paper-rise: #121C18;
+  --ink:        #F6ECD2;
+  --ink-soft:   #DCCA9D;
+  --ink-faint:  #AE9F73;
+  --ink-onnode: #C4B285;
+  --rule:       #2A3A32;
+  --rule-firm:  #6E5A24;
+  --accent:     #EBD68C;
+  --accent-text:#EBD68C;
+  --accent-soft:#1F2A22;
+  --accent-ink: #0C1411;
+  --brass:      #D9B95C;
+  --gen:        #C9A227;
+  --branch-1:   #E0C46A;
+  --branch-2:   #D79A5A;
+  --branch-3:   #A9B98A;
+  --branch-n:   #6E5A24;
+  --node-fill:  #121C18;
+  --node-edge:  #C9A227;
+  --link:       #9C8230;
+  --canvas:     #0C1411;
+  --weave:      #16221D;
+  --ornament:   1;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: oldstyle-nums;
+}
+#root, main { height: 100%; }
+
+a { color: inherit; }
+
+/* ── the shell ─────────────────────────────────────────────────────── */
+
+.shell { display: grid; grid-template-rows: auto 1fr; height: 100%; }
+
+.bar {
+  display: flex; align-items: center; gap: 18px;
+  padding: 0 18px; height: 56px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  position: relative; z-index: 5;
+}
+.bar .mark {
+  font-family: var(--font-serif); font-size: 19px; font-weight: 600;
+  letter-spacing: 0.01em; text-decoration: none; white-space: nowrap;
+}
+.bar .mark span { color: var(--ink-faint); font-weight: 400; }
+.bar .spacer { flex: 1; }
+.bar .who { color: var(--ink-faint); font-size: 13px; }
+.segmented.themes button { padding: 5px 10px; font-size: 12.5px; }
+
+/* Segmented control — the layout switcher. */
+.segmented {
+  display: inline-flex; padding: 3px; gap: 2px;
+  background: var(--paper-sunk); border: 1px solid var(--rule);
+  border-radius: var(--r);
+}
+.segmented button {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: inherit; font-size: 13px; color: var(--ink-soft);
+  padding: 5px 13px; border-radius: var(--r-s);
+  transition: background 140ms ease, color 140ms ease;
+}
+.segmented button:hover { color: var(--ink); }
+.segmented button[aria-pressed="true"] {
+  background: var(--paper-rise); color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--rule-firm);
+}
+
+.btn {
+  appearance: none; cursor: pointer; font: inherit; font-size: 13px;
+  padding: 7px 13px; border-radius: var(--r-s);
+  border: 1px solid var(--rule-firm); background: var(--paper-rise); color: var(--ink);
+  transition: background 140ms ease, border-color 140ms ease;
+}
+.btn:hover { background: var(--paper-sunk); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.quiet { border-color: transparent; background: transparent; color: var(--ink-soft); }
+.btn.quiet:hover { background: var(--paper-sunk); color: var(--ink); }
+
+.field { display: grid; gap: 6px; }
+.field label { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); }
+.field input {
+  font: inherit; padding: 10px 12px; border-radius: var(--r-s);
+  border: 1px solid var(--rule-firm); background: var(--paper-rise); color: var(--ink);
+}
+.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+
+/* ── sign in ───────────────────────────────────────────────────────── */
+
+.signin { display: grid; place-items: center; height: 100%; padding: 24px; }
+.signin form {
+  width: 100%; max-width: 348px; display: grid; gap: 16px;
+  padding: 32px; border: 1px solid var(--rule); border-radius: var(--r);
+  background: var(--paper-rise);
+}
+.signin h1 { font-family: var(--font-serif); font-size: 30px; margin: 0; font-weight: 600; }
+.signin .lede { color: var(--ink-faint); font-size: 14px; margin: -8px 0 4px; line-height: 1.5; }
+.signin .err {
+  font-size: 13px; padding: 9px 12px; border-radius: var(--r-s);
+  background: color-mix(in oklab, #C0392B 18%, var(--paper));
+  border: 1px solid color-mix(in oklab, #C0392B 45%, var(--paper));
+  color: var(--ink);
+}
+.signin .hint { font-size: 12.5px; color: var(--ink-faint); line-height: 1.6; }
+.signin .hint code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+
+/* ── tree picker ───────────────────────────────────────────────────── */
+
+.picker { padding: 48px 24px; max-width: 760px; margin: 0 auto; }
+.picker h1 { font-family: var(--font-serif); font-size: 32px; font-weight: 600; margin: 0 0 6px; }
+.picker .lede { color: var(--ink-faint); margin: 0 0 28px; }
+.picker ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.picker a {
+  display: grid; gap: 3px; padding: 18px 20px; text-decoration: none;
+  border: 1px solid var(--rule); border-radius: var(--r); background: var(--paper-rise);
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+.picker a:hover { border-color: var(--rule-firm); transform: translateY(-1px); }
+.picker .t-name { font-family: var(--font-serif); font-size: 19px; font-weight: 600; }
+.picker .t-meta { font-size: 13px; color: var(--ink-faint); }
+.picker .empty { color: var(--ink-faint); border: 1px dashed var(--rule-firm); padding: 28px; border-radius: var(--r); }
+
+/* ── the canvas ────────────────────────────────────────────────────── */
+
+/*
+ * The ground.
+ *
+ * A faint dot grid in the archive themes; in Tapestry, two sets of
+ * repeating lines that read as warp and weft. Both are pure CSS
+ * gradients on one element, so the texture costs nothing per frame —
+ * which matters, because this sits under a chart that must hold 60fps.
+ */
+.canvas {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(circle at 1px 1px, var(--rule) 1px, transparent 0) 0 0 / 26px 26px,
+    var(--canvas);
+}
+:root[data-theme="tapestry"] .canvas {
+  background:
+    repeating-linear-gradient(90deg, var(--weave) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(0deg,  var(--weave) 0 1px, transparent 1px 4px),
+    radial-gradient(ellipse at 50% 38%, var(--weave) 0%, var(--canvas) 72%);
+}
+.canvas svg:active { cursor: grabbing; }
+
+.links path { stroke: var(--link); stroke-width: 1.25; }
+/* The bar that joins a couple, doubled when they are also kin. */
+.unions path { stroke: var(--link); stroke-width: 1.5; }
+.union.is-kin path { stroke: var(--brass); }
+/* Somebody who married in, rather than descending from above. */
+.node.married-in rect, .node.married-in .cartouche { stroke-dasharray: 5 3; }
+.node.is-repeat rect, .node.is-repeat .cartouche { fill: var(--paper-sunk); }
+.repeat-mark { fill: var(--ink-faint); font-family: var(--font-sans); font-style: italic; }
+
+.node rect, .node .cartouche {
+  fill: var(--node-fill); stroke: var(--node-edge); stroke-width: 1;
+  transition: stroke 120ms ease, fill 120ms ease;
+}
+.node { cursor: pointer; }
+.node:hover rect, .node:hover .cartouche { stroke: var(--accent); }
+.node:focus { outline: none; }
+.node:focus-visible rect, .node:focus-visible .cartouche { stroke: var(--accent); stroke-width: 2; }
+.node.is-root rect, .node.is-root .cartouche { stroke: var(--brass); stroke-width: 2; }
+.node.is-focus rect, .node.is-focus .cartouche { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.75; }
+
+/* The cartouche's second rule and its lozenges. Absent unless Tapestry
+   turns them on, so the archive themes pay nothing for them. */
+.cartouche-inner { fill: none; stroke: var(--node-edge); stroke-width: 0.6; opacity: 0.55; }
+.flourish path { fill: var(--node-edge); stroke: none; opacity: 0.85; }
+.node.is-root .flourish path { fill: var(--brass); opacity: 1; }
+.flourish .pearl { fill: var(--brass); stroke: var(--canvas); stroke-width: 1; }
+
+.node-name { font-family: var(--font-serif); fill: var(--ink); font-weight: 500; }
+.node-years { font-family: var(--font-sans); fill: var(--ink-onnode); font-variant-numeric: oldstyle-nums; }
+.living-dot { fill: var(--brass); }
+
+/* The fan. Wedge fill is the generation ramp; the stroke is the paper,
+   so the rings read as separated without a second colour. */
+.wedge { cursor: pointer; }
+.wedge path {
+  stroke: var(--wedge-edge, color-mix(in oklab, var(--ink) 16%, transparent)); stroke-width: 0.75;
+  transition: opacity 120ms ease;
+}
+.wedge:hover path { opacity: 1; }
+.wedge:focus { outline: none; }
+.wedge:focus-visible path { stroke: var(--accent); stroke-width: 2.5; }
+.wedge.is-focus path { stroke: var(--accent); stroke-width: 2.5; }
+.wedge.is-root path { stroke: var(--brass); stroke-width: 2; }
+.wedge-label text { font-family: var(--font-serif); fill: var(--ink); font-weight: 500; }
+.wedge-years { font-family: var(--font-sans); opacity: 0.72; font-variant-numeric: oldstyle-nums; }
+.wedge.gen-0 path { fill: var(--paper-rise); stroke: var(--rule-firm); stroke-width: 1.25; }
+.wedge.gen-1 path { fill: color-mix(in oklab, var(--gen) 78%, var(--paper-rise)); }
+.wedge.gen-2 path { fill: color-mix(in oklab, var(--gen) 66%, var(--paper-rise)); }
+.wedge.gen-3 path { fill: color-mix(in oklab, var(--gen) 55%, var(--paper-rise)); }
+.wedge.gen-4 path { fill: color-mix(in oklab, var(--gen) 45%, var(--paper-rise)); }
+.wedge.gen-5 path { fill: color-mix(in oklab, var(--gen) 36%, var(--paper-rise)); }
+.wedge.gen-6 path { fill: color-mix(in oklab, var(--gen) 28%, var(--paper-rise)); }
+.wedge.gen-7 path { fill: color-mix(in oklab, var(--gen) 21%, var(--paper-rise)); }
+.wedge.gen-8 path { fill: color-mix(in oklab, var(--gen) 15%, var(--paper-rise)); }
+.wedge.gen-9 path { fill: color-mix(in oklab, var(--gen) 10%, var(--paper-rise)); }
+
+:root[data-theme="tapestry"] {
+  --wedge-edge: color-mix(in oklab, var(--gen) 55%, transparent);
+}
+:root[data-theme="tapestry"] .wedge.gen-0 path { fill: var(--paper-rise); stroke: var(--gen); stroke-width: 1.5; }
+:root[data-theme="tapestry"] .wedge.gen-1 path { fill: color-mix(in oklab, var(--gen) 34%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-2 path { fill: color-mix(in oklab, var(--gen) 29%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-3 path { fill: color-mix(in oklab, var(--gen) 24%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-4 path { fill: color-mix(in oklab, var(--gen) 20%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-5 path { fill: color-mix(in oklab, var(--gen) 16%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-6 path { fill: color-mix(in oklab, var(--gen) 12%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-7 path { fill: color-mix(in oklab, var(--gen)  9%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-8 path { fill: color-mix(in oklab, var(--gen)  6%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge.gen-9 path { fill: color-mix(in oklab, var(--gen)  4%, var(--paper-rise)); }
+:root[data-theme="tapestry"] .wedge-label text { fill: var(--ink); }
+:root[data-theme="tapestry"] .bar,
+:root[data-theme="tapestry"] .panel { border-color: var(--rule); }
+:root[data-theme="tapestry"] .bar .mark { color: var(--accent); }
+
+/* ── the pedigree symbols ──────────────────────────────────────────── */
+
+/*
+ * Shape carries sex, a stroke carries death, brackets carry adoption —
+ * the NSGC standard. None of it is colour, so it survives greyscale, a
+ * photocopier and every kind of colour-blindness.
+ */
+.symbol { fill: var(--node-fill); stroke: var(--node-edge); stroke-width: 1.5; }
+.deceased { stroke: var(--ink); stroke-width: 1.75; stroke-linecap: round; }
+.brackets path { fill: none; stroke: var(--ink-soft); stroke-width: 1.5; }
+.sex-unknown { fill: var(--ink-faint); font-family: var(--font-sans); font-weight: 600; }
+.initials { fill: var(--ink); font-family: var(--font-serif); font-weight: 500; }
+
+/* ── the canopy ────────────────────────────────────────────────────── */
+
+.trunk { fill: var(--bark, #7C6142); }
+.bough { fill: var(--bark, #7C6142); }
+/* A bough that is not by birth is drawn open rather than solid — the
+   same distinction the boxes make with a dashed line. */
+.bough.lineage-adoptive, .bough.lineage-step, .bough.lineage-foster,
+.bough.lineage-guardian, .bough.lineage-donor, .bough.lineage-surrogate {
+  fill: color-mix(in oklab, var(--bark, #7C6142) 42%, var(--canvas));
+  stroke: var(--bark, #7C6142); stroke-width: 1; stroke-dasharray: 5 4;
+}
+.leaves path { fill: var(--leaf, #7FBF63); opacity: 0.88; }
+
+.medallion { cursor: pointer; }
+.medallion:focus { outline: none; }
+.medallion .symbol { stroke-width: 2; }
+.medallion.branch-0 .symbol { fill: color-mix(in oklab, var(--branch-1) 16%, var(--paper-rise)); stroke: var(--branch-1); }
+.medallion.branch-1 .symbol { fill: color-mix(in oklab, var(--branch-2) 16%, var(--paper-rise)); stroke: var(--branch-2); }
+.medallion.branch-2 .symbol { fill: color-mix(in oklab, var(--branch-3) 16%, var(--paper-rise)); stroke: var(--branch-3); }
+.medallion.branch-n .symbol { fill: color-mix(in oklab, var(--branch-n) 16%, var(--paper-rise)); stroke: var(--branch-n); }
+.medallion.is-root .symbol { stroke: var(--brass); stroke-width: 3; }
+.medallion.is-focus .symbol { stroke: var(--accent); stroke-width: 3.5; }
+.medallion:hover .symbol { stroke: var(--accent); }
+.medallion:focus-visible .symbol { stroke: var(--accent); stroke-width: 3.5; }
+/*
+ * Names sit over boughs and leaves, so they carry a halo of the canvas
+ * colour painted behind the glyphs. `paint-order` is what makes that a
+ * halo rather than an outline — stroke first, fill on top — and it is
+ * the only way to keep a label legible over a drawing without boxing it
+ * in. The halo is the canvas colour, so contrast is still measured
+ * against the canvas.
+ */
+.medallion-name, .medallion-years {
+  paint-order: stroke fill;
+  stroke: var(--canvas); stroke-width: 3.5px; stroke-linejoin: round;
+}
+.medallion-name { fill: var(--ink); font-family: var(--font-serif); font-weight: 500; }
+.medallion-years { fill: var(--ink-faint); font-family: var(--font-sans); font-variant-numeric: oldstyle-nums; }
+
+:root { --bark: #8A6A45; --leaf: #62A845; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { --bark: #5A4630; --leaf: #477A38; } }
+:root[data-theme="dark"] { --bark: #5A4630; --leaf: #477A38; }
+:root[data-theme="tapestry"] { --bark: #6E5A24; --leaf: #9C8230; }
+
+/* The box layouts carry the same symbol, small, beside the name. */
+.node .glyph .symbol { stroke-width: 1.4; }
+
+/* ── floating controls ─────────────────────────────────────────────── */
+
+.controls {
+  position: absolute; right: 16px; bottom: 16px;
+  display: grid; gap: 6px; justify-items: stretch;
+}
+.controls .group {
+  display: grid; background: var(--paper-rise);
+  border: 1px solid var(--rule-firm); border-radius: var(--r); overflow: hidden;
+}
+.controls button {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  color: var(--ink); font: inherit; font-size: 16px; width: 38px; height: 34px;
+  display: grid; place-items: center;
+}
+.controls button + button { border-top: 1px solid var(--rule); }
+.controls button:hover { background: var(--paper-sunk); }
+.zoom-readout {
+  text-align: center; font-size: 11px; color: var(--ink-faint);
+  font-variant-numeric: tabular-nums; padding: 3px 0;
+  background: var(--paper-rise); border: 1px solid var(--rule-firm); border-radius: var(--r-s);
+}
+
+.depth {
+  position: absolute; left: 16px; bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--paper-rise); border: 1px solid var(--rule-firm);
+  border-radius: var(--r); padding: 8px 14px; font-size: 13px;
+}
+.depth label { color: var(--ink-faint); }
+.depth input { width: 116px; accent-color: var(--accent); }
+.depth output { font-variant-numeric: tabular-nums; min-width: 1.4em; }
+.depth .capped { font-size: 12px; color: var(--ink-faint); border-left: 1px solid var(--rule); padding-left: 10px; }
+
+.legend {
+  position: absolute; left: 16px; top: 16px;
+  background: var(--paper-rise); border: 1px solid var(--rule); border-radius: var(--r);
+  font-size: 12px; color: var(--ink-soft); max-width: 260px;
+}
+.legend-toggle {
+  appearance: none; border: 0; background: none; cursor: pointer; font: inherit;
+  color: var(--ink-soft); padding: 8px 14px; width: 100%; text-align: left;
+}
+.legend-toggle:hover { color: var(--ink); }
+.legend-body { padding: 0 14px 12px; display: grid; gap: 10px; }
+.legend-group { display: grid; gap: 5px; }
+.legend-group + .legend-group { border-top: 1px solid var(--rule); padding-top: 9px; }
+.legend .row { display: flex; align-items: center; gap: 9px; }
+.legend svg { overflow: visible; flex: none; }
+.legend-note { color: var(--ink-faint); line-height: 1.45; }
+.legend-note.src { font-size: 11px; border-top: 1px solid var(--rule); padding-top: 8px; }
+
+/* ── the person panel ──────────────────────────────────────────────── */
+
+.panel {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 352px;
+  background: var(--paper); border-left: 1px solid var(--rule);
+  overflow-y: auto; padding: 22px 24px 32px;
+  display: grid; gap: 18px; align-content: start;
+}
+.panel .close { position: absolute; right: 12px; top: 12px; }
+.panel h2 { font-family: var(--font-serif); font-size: 25px; margin: 0; font-weight: 600; line-height: 1.2; padding-right: 32px; }
+.panel .years { color: var(--ink-faint); font-size: 14px; margin-top: 3px; font-variant-numeric: oldstyle-nums; }
+.panel section { display: grid; gap: 7px; }
+.panel h3 {
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-faint); margin: 0; font-weight: 600;
+}
+.panel dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14px; }
+.panel dt { color: var(--ink-faint); }
+.panel dd { margin: 0; }
+.panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; font-size: 14px; }
+.panel .rel { display: flex; gap: 8px; align-items: baseline; }
+.panel .rel button {
+  appearance: none; border: 0; background: none; padding: 0; cursor: pointer;
+  font: inherit; color: var(--accent-text); text-align: left; text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent-text) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.panel .rel button:hover { text-decoration-color: var(--accent-text); }
+.panel .tag {
+  font-size: 11px; color: var(--ink-faint); border: 1px solid var(--rule-firm);
+  border-radius: 99px; padding: 1px 7px;
+}
+/* Was 2.61:1 — the worst thing on the page, and it is the one note that
+   exists to explain a privacy rule. Full ink on a tinted ground. */
+.panel .living {
+  font-size: 12.5px; padding: 9px 12px; border-radius: var(--r-s);
+  background: color-mix(in oklab, var(--brass) 14%, var(--paper));
+  border-left: 3px solid var(--brass);
+  color: var(--ink); line-height: 1.55;
+}
+.panel .event { display: grid; gap: 1px; padding: 7px 0; border-top: 1px solid var(--rule); }
+.panel .event:first-of-type { border-top: 0; }
+.panel .event .what { font-weight: 500; }
+.panel .event .when { color: var(--ink-faint); font-size: 13px; font-variant-numeric: oldstyle-nums; }
+.panel .event .where { color: var(--ink-faint); font-size: 13px; }
+.panel .muted { color: var(--ink-faint); font-size: 13.5px; }
+.panel .root-btn { justify-self: start; }
+
+.nowhere {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, 34px);
+  max-width: 420px; text-align: center; pointer-events: auto;
+  background: var(--paper-rise); border: 1px solid var(--rule);
+  border-radius: var(--r); padding: 18px 22px;
+  display: grid; gap: 14px; justify-items: center;
+}
+.nowhere p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.55; }
+.nowhere strong { font-family: var(--font-serif); color: var(--ink); }
+.nowhere .row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+/* ── search ────────────────────────────────────────────────────────── */
+
+.search { position: relative; }
+.search input {
+  font: inherit; font-size: 13.5px; width: 240px; padding: 7px 11px;
+  border-radius: var(--r-s); border: 1px solid var(--rule-firm);
+  background: var(--paper-rise); color: var(--ink);
+}
+.search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.search ol {
+  position: absolute; top: calc(100% + 6px); left: 0; width: 300px; z-index: 20;
+  list-style: none; margin: 0; padding: 5px;
+  background: var(--paper-rise); border: 1px solid var(--rule-firm);
+  border-radius: var(--r); max-height: 320px; overflow-y: auto;
+}
+.search li button {
+  appearance: none; border: 0; background: none; cursor: pointer; font: inherit;
+  width: 100%; text-align: left; padding: 7px 10px; border-radius: var(--r-s); color: var(--ink);
+  display: flex; justify-content: space-between; gap: 10px; align-items: baseline;
+}
+.search li button:hover, .search li button:focus { background: var(--accent-soft); outline: none; }
+.search .s-name { font-family: var(--font-serif); }
+.search .s-years { font-size: 12px; color: var(--ink-faint); font-variant-numeric: oldstyle-nums; }
+.search .none { padding: 10px; font-size: 13px; color: var(--ink-faint); }
+
+/* ── misc ──────────────────────────────────────────────────────────── */
+
+.centred { display: grid; place-items: center; height: 100%; text-align: center; padding: 24px; }
+.centred h1 { font-family: var(--font-serif); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+
+@media print {
+  .bar, .controls, .depth, .panel, .legend, .search { display: none !important; }
+  .canvas { background: none; }
+}
+
+@media (max-width: 820px) {
+  .panel { width: 100%; }
+  .search input { width: 150px; }
+  .bar { gap: 10px; padding: 0 12px; }
+}

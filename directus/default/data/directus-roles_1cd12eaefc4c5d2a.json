@@ -1,0 +1,20 @@
+{
+  "collection": "directus_roles",
+  "primaryKey": "id",
+  "records": [
+    {
+      "description": "$t:admin_description",
+      "icon": "verified",
+      "id": "05ff30a0-dd1b-4249-9ca3-d72a71fd3080",
+      "name": "Administrator",
+      "parent": null
+    },
+    {
+      "description": "Everybody who signs in. What they may do in any given tree comes from their tree_members row, not from this role.",
+      "icon": "person",
+      "id": "075bc6cc-c9ff-4531-9e8b-dbb3e2159fbb",
+      "name": "Member",
+      "parent": null
+    }
+  ]
+}

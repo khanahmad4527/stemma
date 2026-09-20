@@ -1,0 +1,40 @@
+{
+  "collection": "stemma_evidence",
+  "definition": {
+    "collection": "stemma_evidence",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "stemma_evidence",
+      "color": "#2A78D6",
+      "display_template": null,
+      "group": null,
+      "hidden": false,
+      "icon": "folder",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_folder_evidence",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 5,
+      "sort_field": null,
+      "status": "active",
+      "translations": [
+        {
+          "language": "en-US",
+          "plural": "Sources & Evidence",
+          "singular": "Sources & Evidence",
+          "translation": "Sources & Evidence"
+        }
+      ],
+      "unarchive_value": null,
+      "versioning": false
+    }
+  },
+  "fields": [],
+  "relations": [],
+  "systemFields": []
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@stemma/bootstrap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/author.ts",
+    "rules": "tsx src/constraints.ts",
+    "seed": "tsx src/seed.ts",
+    "family": "tsx src/family.ts",
+    "verify": "tsx src/verify.ts",
+    "typecheck": "tsc --noEmit",
+    "policies": "tsx src/access.ts",
+    "presets": "tsx src/presets.ts",
+    "brand": "tsx src/brand.ts",
+    "theme": "tsx src/theme.ts"
+  },
+  "dependencies": {
+    "pg": "8.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.3",
+    "@types/pg": "8.23.1",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "license": "PolyForm-Strict-1.0.0"
+}

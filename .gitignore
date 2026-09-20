@@ -1,0 +1,37 @@
+node_modules/
+.env
+
+# The Postgres volume and the file library, both root-anchored.
+#
+# These were `data/` and `uploads/` until the leading slash went in. An
+# unanchored `data/` also matches `directus/default/data/`, which is where
+# `d6s sync pull` writes every translation, policy, role and setting — so
+# the entire configuration half of the sync was being silently excluded
+# from version control while the schema half was committed. The symptom
+# would have been a push to a fresh instance coming up with no field notes
+# and no access model, and nothing in the diff to explain why.
+/data/
+/uploads/
+
+*.log
+.DS_Store
+
+# React Router / Vite build output and generated route types.
+apps/web/build/
+apps/web/.react-router/
+
+# Your own family, not demo data.
+#
+# `family.ts` names about forty living relatives. The whole point of this
+# project is that living people are a legal problem rather than a display
+# preference, and a repo that might one day be public is not the place
+# for them by default — so it stays out, and the tree lives in your
+# database instead.
+#
+# To version it anyway (a private repo, a backup you control):
+#   git add -f bootstrap/src/family.ts
+bootstrap/src/family.ts
+
+# Extension build output. Directus loads dist/ at runtime, so a fresh
+# clone runs `pnpm build:extensions` before `docker compose up`.
+extensions/*/dist/

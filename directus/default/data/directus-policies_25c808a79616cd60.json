@@ -1,0 +1,36 @@
+{
+  "collection": "directus_policies",
+  "primaryKey": "id",
+  "records": [
+    {
+      "admin_access": false,
+      "app_access": false,
+      "description": "$t:public_description",
+      "enforce_tfa": false,
+      "icon": "public",
+      "id": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "ip_access": null,
+      "name": "$t:public_label"
+    },
+    {
+      "admin_access": true,
+      "app_access": true,
+      "description": "$t:admin_description",
+      "enforce_tfa": false,
+      "icon": "verified",
+      "id": "ac20a4cd-2bce-4622-a56e-2e1361b78aff",
+      "ip_access": null,
+      "name": "Administrator"
+    },
+    {
+      "admin_access": false,
+      "app_access": true,
+      "description": "Signed-in contributor. Sees and changes the trees they belong to, at the standing their membership records.",
+      "enforce_tfa": false,
+      "icon": "group",
+      "id": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "ip_access": null,
+      "name": "Tree member"
+    }
+  ]
+}

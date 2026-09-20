@@ -1,0 +1,47 @@
+{
+  "name": "stemma",
+  "private": true,
+  "description": "A multi-tenant genealogy backend on Directus, where a family tree is a directed acyclic graph.",
+  "license": "PolyForm-Strict-1.0.0",
+  "author": "Ahmad Khan <ahmad@khanahmad.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanahmad4527/stemma.git"
+  },
+  "keywords": [
+    "directus",
+    "genealogy",
+    "gedcom",
+    "postgres",
+    "family-tree",
+    "directus-extension"
+  ],
+  "scripts": {
+    "up": "docker compose up -d",
+    "build:extensions": "pnpm --filter \"directus-extension-*\" build",
+    "down": "docker compose down",
+    "logs": "docker compose logs -f directus",
+    "build": "pnpm --filter @stemma/bootstrap build",
+    "rules": "pnpm --filter @stemma/bootstrap rules",
+    "policies": "pnpm --filter @stemma/bootstrap policies",
+    "presets": "pnpm --filter @stemma/bootstrap presets",
+    "brand": "pnpm --filter @stemma/bootstrap brand",
+    "theme": "pnpm --filter @stemma/bootstrap theme",
+    "verify": "pnpm --filter @stemma/bootstrap verify",
+    "seed": "pnpm --filter @stemma/bootstrap seed",
+    "family": "pnpm --filter @stemma/bootstrap family",
+    "pull": "d6s sync pull --from local",
+    "diff": "d6s sync diff --to local",
+    "typecheck": "pnpm -r typecheck",
+    "web": "pnpm --filter @stemma/web dev",
+    "web:build": "pnpm --filter @stemma/web build",
+    "contrast": "pnpm --filter @stemma/web contrast"
+  },
+  "devDependencies": {
+    "@directus/cli": "12.2.1"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

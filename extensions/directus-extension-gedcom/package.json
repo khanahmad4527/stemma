@@ -1,0 +1,48 @@
+{
+  "name": "directus-extension-gedcom",
+  "version": "1.0.0",
+  "description": "Exports a tree as GEDCOM 7, deriving the FAM records this schema deliberately does not store, and reading through the caller's own permissions.",
+  "private": true,
+  "license": "PolyForm-Strict-1.0.0",
+  "author": "Ahmad Khan <ahmad@khanahmad.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanahmad4527/stemma.git",
+    "directory": "extensions/directus-extension-gedcom"
+  },
+  "homepage": "https://github.com/khanahmad4527/stemma#gedcom-export",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-endpoint",
+    "genealogy",
+    "gedcom"
+  ],
+  "type": "module",
+  "icon": "download",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "directus:extension": {
+    "type": "endpoint",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^11.0.0 || ^12.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "13.1.1",
+    "@types/node": "22.20.3",
+    "typescript": "5.9.3",
+    "@types/express": "5.0.5"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

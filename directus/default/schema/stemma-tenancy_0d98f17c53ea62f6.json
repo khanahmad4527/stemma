@@ -1,0 +1,40 @@
+{
+  "collection": "stemma_tenancy",
+  "definition": {
+    "collection": "stemma_tenancy",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "stemma_tenancy",
+      "color": "#2A78D6",
+      "display_template": null,
+      "group": null,
+      "hidden": false,
+      "icon": "folder",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_folder_tenancy",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 1,
+      "sort_field": null,
+      "status": "active",
+      "translations": [
+        {
+          "language": "en-US",
+          "plural": "Trees & Access",
+          "singular": "Trees & Access",
+          "translation": "Trees & Access"
+        }
+      ],
+      "unarchive_value": null,
+      "versioning": false
+    }
+  },
+  "fields": [],
+  "relations": [],
+  "systemFields": []
+}

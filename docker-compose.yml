@@ -1,0 +1,72 @@
+# Two services and nothing else yet.
+#
+# Stemma's step one is to prove the graph holds and the privacy boundary
+# works. Neither needs a cache, a mail catcher or a worker, and a compose
+# file that starts five containers to demonstrate two is a file nobody
+# reads to the end.
+
+services:
+  database:
+    # Tag *and* digest. `16-alpine` is a moving target that becomes a
+    # different Postgres on any pull; the digest is the byte-for-byte
+    # image this was built and tested against.
+    image: postgres:16.15-alpine@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_DATABASE:-stemma}
+      POSTGRES_USER: ${DB_USER:-stemma}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+    # Loopback only. The rules in bootstrap/src/constraints.ts are DDL
+    # that Directus has no endpoint for, so provisioning needs a direct
+    # connection — but only from this machine. Directus itself reaches
+    # the database as `database:5432` over the compose network and never
+    # touches this port.
+    ports:
+      - "127.0.0.1:${DB_PORT:-9433}:5432"
+    volumes:
+      - ./data/database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-stemma} -d ${DB_DATABASE:-stemma}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  directus:
+    image: ${DIRECTUS_IMAGE:-directus/directus:12.3.1@sha256:8978edf633ae28aa31464bb71c55300c94d8bc771ff3727b5fac485173283869}
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "${DIRECTUS_PORT:-9057}:8055"
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      KEY: ${KEY:?set KEY in .env}
+      SECRET: ${SECRET:?set SECRET in .env}
+
+      DB_CLIENT: pg
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_DATABASE: ${DB_DATABASE:-stemma}
+      DB_USER: ${DB_USER:-stemma}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@stemma.dev}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
+
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:9057}
+
+      # Without this, 12.x runs at core tier and refuses custom rules on
+      # access policies. Stemma's entire public model is a custom rule —
+      # `tree.is_public = true AND is_living = false` — so an unlicensed
+      # instance cannot express the one thing standing between an
+      # anonymous visitor and a living person's date of birth.
+      LICENSE_KEY: ${DIRECTUS_LICENSE_KEY:-}
+
+      # Anonymous visitors read the public site. They have no membership
+      # and must never be routed through one, so the Public policy does
+      # the work — but CORS has to let a browser reach it at all.
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: ${CORS_ORIGIN:-true}

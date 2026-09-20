@@ -1,0 +1,1330 @@
+{
+  "collection": "trees",
+  "definition": {
+    "collection": "trees",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "trees",
+      "color": "#2A78D6",
+      "display_template": "{{name}}",
+      "group": "stemma_tenancy",
+      "hidden": false,
+      "icon": "account_tree",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_note_trees",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 1,
+      "sort_field": null,
+      "status": "active",
+      "translations": null,
+      "unarchive_value": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "trees"
+    }
+  },
+  "fields": [
+    {
+      "collection": "trees",
+      "field": "date_created",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 92,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "trees",
+      "field": "date_updated",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 94,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "trees",
+      "field": "default_calendar",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_gregorian",
+              "value": "gregorian"
+            },
+            {
+              "text": "$t:stemma_c_julian",
+              "value": "julian"
+            },
+            {
+              "text": "$t:stemma_c_hebrew",
+              "value": "hebrew"
+            },
+            {
+              "text": "$t:stemma_c_french_republican",
+              "value": "french_republican"
+            },
+            {
+              "text": "$t:stemma_c_islamic",
+              "value": "islamic"
+            },
+            {
+              "text": "$t:stemma_c_japanese",
+              "value": "japanese"
+            },
+            {
+              "text": "$t:stemma_c_ethiopian",
+              "value": "ethiopian"
+            },
+            {
+              "text": "$t:stemma_c_coptic",
+              "value": "coptic"
+            },
+            {
+              "text": "$t:stemma_c_quaker",
+              "value": "quaker"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "field": "default_calendar",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_default_calendar",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_gregorian",
+              "value": "gregorian"
+            },
+            {
+              "text": "$t:stemma_c_julian",
+              "value": "julian"
+            },
+            {
+              "text": "$t:stemma_c_hebrew",
+              "value": "hebrew"
+            },
+            {
+              "text": "$t:stemma_c_french_republican",
+              "value": "french_republican"
+            },
+            {
+              "text": "$t:stemma_c_islamic",
+              "value": "islamic"
+            },
+            {
+              "text": "$t:stemma_c_japanese",
+              "value": "japanese"
+            },
+            {
+              "text": "$t:stemma_c_ethiopian",
+              "value": "ethiopian"
+            },
+            {
+              "text": "$t:stemma_c_coptic",
+              "value": "coptic"
+            },
+            {
+              "text": "$t:stemma_c_quaker",
+              "value": "quaker"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 24,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "gregorian",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "default_calendar",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "default_name_order",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_given_first",
+              "value": "given_first"
+            },
+            {
+              "text": "$t:stemma_c_surname_first",
+              "value": "surname_first"
+            }
+          ]
+        },
+        "field": "default_name_order",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_default_name_order",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_given_first",
+              "value": "given_first"
+            },
+            {
+              "text": "$t:stemma_c_surname_first",
+              "value": "surname_first"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 22,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "given_first",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "default_name_order",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "description",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "format": true
+        },
+        "field": "description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "$t:stemma_note_tree_description",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 13,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "text",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "description",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "text"
+    },
+    {
+      "collection": "trees",
+      "field": "divider_contents",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "divider_contents",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "icon": "account_tree",
+          "title": "Contents"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 10,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "divider_conventions",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "divider_conventions",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "icon": "tune",
+          "title": "Conventions"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 19,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "divider_visibility",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "divider_visibility",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "icon": "public",
+          "title": "Visibility"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 15,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "first_published_at",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "first_published_at",
+        "group": null,
+        "hidden": true,
+        "interface": "datetime",
+        "note": "$t:stemma_note_tree_first_published_at",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 25,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "first_published_at",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "trees",
+      "field": "home_person",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{display_name}}"
+        },
+        "field": "home_person",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_tree_home_person",
+        "options": {
+          "template": "{{display_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 14,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "home_person",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "trees",
+      "field": "id",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "id",
+        "group": "system",
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_system_id",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 91,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": "gen_random_uuid()",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": true,
+        "is_unique": true,
+        "max_length": null,
+        "name": "id",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "trees",
+      "field": "invitations",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{email}} → {{role}}"
+        },
+        "field": "invitations",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "layout": "list",
+          "template": "{{email}} → {{role}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 26,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "is_listed",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": null,
+        "field": "is_listed",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "$t:stemma_note_tree_is_listed",
+        "options": {
+          "label": "Listed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 16,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "boolean",
+        "default_value": true,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "is_listed",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "boolean"
+    },
+    {
+      "collection": "trees",
+      "field": "is_public",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": null,
+        "field": "is_public",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "$t:stemma_note_tree_is_public",
+        "options": {
+          "label": "Public"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "boolean",
+        "default_value": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "is_public",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "boolean"
+    },
+    {
+      "collection": "trees",
+      "field": "legacy_contact",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "legacy_contact",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_tree_legacy_contact",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 18,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "legacy_contact",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "living_cutoff_years",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "living_cutoff_years",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_living_cutoff_years",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 20,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "integer",
+        "default_value": 100,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "living_cutoff_years",
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "table": "trees"
+      },
+      "type": "integer"
+    },
+    {
+      "collection": "trees",
+      "field": "members",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{user.first_name}} {{user.last_name}} — {{role}}"
+        },
+        "field": "members",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "layout": "list",
+          "template": "{{user.first_name}} {{user.last_name}} — {{role}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 11,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "name",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_tree_name",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "name",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "owner",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "field": "owner",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_tree_owner",
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 5,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_users",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "owner",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "trees",
+      "field": "particle_sorting",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_ignore",
+              "value": "ignore"
+            },
+            {
+              "text": "$t:stemma_c_include",
+              "value": "include"
+            }
+          ]
+        },
+        "field": "particle_sorting",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_particle_sorting",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_ignore",
+              "value": "ignore"
+            },
+            {
+              "text": "$t:stemma_c_include",
+              "value": "include"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 23,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "ignore",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "particle_sorting",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "persons",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{display_name}}"
+        },
+        "field": "persons",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "layout": "list",
+          "template": "{{display_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 12,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "privacy_years_after_death",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "privacy_years_after_death",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_privacy_years_after_death",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 21,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "integer",
+        "default_value": 0,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "privacy_years_after_death",
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "table": "trees"
+      },
+      "type": "integer"
+    },
+    {
+      "collection": "trees",
+      "field": "slug",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "slug",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_tree_slug",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "slug": {
+            "_regex": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "validation_message": "$t:stemma_vm_slug",
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": true,
+        "max_length": 255,
+        "name": "slug",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "trees",
+      "field": "system",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "system",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": "$t:stemma_note_system_group",
+        "options": {
+          "headerIcon": "manage_history",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 90,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "trees",
+      "field": "user_created",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 93,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "trees",
+      "field": "user_updated",
+      "meta": {
+        "collection": "trees",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 95,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "trees"
+      },
+      "type": "uuid"
+    }
+  ],
+  "relations": [
+    {
+      "collection": "trees",
+      "field": "home_person",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "trees",
+        "many_field": "home_person",
+        "one_allowed_collections": null,
+        "one_collection": "persons",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "persons",
+      "schema": {
+        "column": "home_person",
+        "constraint_name": "trees_home_person_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "on_delete": "SET NULL",
+        "on_update": "NO ACTION",
+        "table": "trees"
+      }
+    },
+    {
+      "collection": "trees",
+      "field": "owner",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "trees",
+        "many_field": "owner",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "directus_users",
+      "schema": {
+        "column": "owner",
+        "constraint_name": "trees_owner_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_users",
+        "on_delete": "SET NULL",
+        "on_update": "NO ACTION",
+        "table": "trees"
+      }
+    }
+  ],
+  "systemFields": []
+}

@@ -1,0 +1,14 @@
+# One install, one lockfile. `bootstrap/` is the only package for now;
+# the public website and any Directus extensions land beside it later,
+# which is why this is a workspace on day one rather than a rewrite on
+# the day the second package appears.
+packages:
+  - "bootstrap"
+  - "apps/*"
+  - "extensions/*"
+
+# esbuild ships a platform binary its install script unpacks; the
+# Directus CLI needs it. pnpm 10 refuses lifecycle scripts by default,
+# which is the right default — this is the one exception that is needed.
+onlyBuiltDependencies:
+  - esbuild

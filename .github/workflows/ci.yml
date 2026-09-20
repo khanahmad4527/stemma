@@ -1,0 +1,133 @@
+# Two jobs, deliberately split by what they need.
+#
+# `static` needs nothing but Node, so it runs on every push and on every
+# fork's pull request. `suite` stands the real stack up and runs the
+# checks against it — which needs a Directus licence key, because at core
+# tier Directus refuses any permission carrying a filter and this
+# project's entire access model is filters. Forks have no key, so that
+# job skips rather than failing with something that looks like a bug.
+# Third-party actions are pinned to a commit, not a tag. A tag is
+# mutable — whoever controls the repository can move `v4` to any commit
+# they like, and a moved tag runs their code with this workflow's
+# permissions. The trailing comment records which release the commit was.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  static:
+    name: typecheck and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1  # v4.3.0
+        with: { version: 10.33.0 }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
+        with: { node-version: 22.20.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      # noUnusedLocals and noUnusedParameters are on, so this also fails
+      # on dead code rather than leaving it to be noticed.
+      - run: pnpm typecheck
+      # Pure arithmetic over six literals, so it belongs with the static
+      # job: both gates on the Data Studio's domain hues, 3:1 against
+      # every chrome background and OKLab dE 15 between every pair.
+      - run: pnpm theme
+      - run: pnpm build:extensions
+      - run: pnpm --filter @stemma/web build
+
+  suite:
+    name: database rules, access model, contrast
+    runs-on: ubuntu-latest
+    # A fork cannot read the key, and a run that silently proved nothing
+    # would be worse than one that says it was skipped.
+    if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1  # v4.3.0
+        with: { version: 10.33.0 }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
+        with: { node-version: 22.20.0, cache: pnpm }
+
+      - name: Is there a licence key?
+        id: lic
+        run: echo "has=${{ secrets.DIRECTUS_LICENSE_KEY != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Skip, and say why
+        if: steps.lic.outputs.has != 'true'
+        run: |
+          echo "::notice::No DIRECTUS_LICENSE_KEY secret. Directus at core tier refuses every"
+          echo "::notice::permission carrying a filter, so the access model cannot be applied and"
+          echo "::notice::the suite would report unrunnable rather than passing. Skipped."
+
+      - name: Write .env
+        if: steps.lic.outputs.has == 'true'
+        run: |
+          cat > .env <<EOF
+          DB_DATABASE=stemma
+          DB_USER=stemma
+          DB_PASSWORD=$(openssl rand -hex 16)
+          DB_PORT=9433
+          KEY=$(openssl rand -hex 32)
+          SECRET=$(openssl rand -hex 32)
+          DIRECTUS_PORT=9057
+          PUBLIC_URL=http://localhost:9057
+          ADMIN_EMAIL=admin@stemma.dev
+          ADMIN_PASSWORD=$(openssl rand -hex 12)
+          DIRECTUS_IMAGE=directus/directus:12.3.1
+          DIRECTUS_LICENSE_KEY=${{ secrets.DIRECTUS_LICENSE_KEY }}
+          DEMO_PASSWORD=StemmaDemo!2026
+          EOF
+          printf 'DIRECTUS_URL=http://localhost:9057\nSESSION_SECRET=%s\nWEB_PORT=8060\n' "$(openssl rand -hex 32)" > apps/web/.env
+
+      - run: pnpm install --frozen-lockfile
+        if: steps.lic.outputs.has == 'true'
+
+      # Before the stack: Directus loads dist/ from the mounted volume at
+      # boot, so an unbuilt extension is simply absent.
+      - name: Build the extensions
+        if: steps.lic.outputs.has == 'true'
+        run: pnpm build:extensions
+
+      - name: Bring the stack up
+        if: steps.lic.outputs.has == 'true'
+        run: |
+          docker compose up -d
+          for i in $(seq 1 60); do
+            curl -sf -o /dev/null http://localhost:9057/server/ping && break
+            sleep 2
+          done
+
+      # Order matters: the schema, then the rules that guard it, then the
+      # access model, then data, then the proof. Until `rules` has run the
+      # instance will happily accept a cycle. `brand` comes after
+      # `policies` because the public file rule names the folder it
+      # creates, and before `verify`, which asserts an anonymous caller
+      # can fetch the logo and nothing beyond it.
+      - name: Provision
+        if: steps.lic.outputs.has == 'true'
+        run: |
+          pnpm build
+          pnpm rules
+          pnpm policies
+          pnpm brand
+          pnpm presets
+          pnpm seed
+
+      - name: The checks
+        if: steps.lic.outputs.has == 'true'
+        run: pnpm verify
+
+      - name: Contrast, in a real browser
+        if: steps.lic.outputs.has == 'true'
+        run: |
+          pnpm --filter @stemma/web exec playwright install --with-deps chromium
+          pnpm --filter @stemma/web dev &
+          for i in $(seq 1 40); do curl -sf -o /dev/null http://localhost:8060/login && break; sleep 2; done
+          pnpm contrast
+
+      - name: What Directus said, if any of that failed
+        if: failure() && steps.lic.outputs.has == 'true'
+        run: docker compose logs --tail 120 directus

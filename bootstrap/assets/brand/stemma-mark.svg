@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Stemma">
+  <!--
+    The mark is a pedigree in the standard shapes, not an invented logo:
+    square, circle and diamond are the NSGC nomenclature (Bennett et al.,
+    2022) for male, female and sex-not-recorded. So it reads as a family
+    to anyone who has seen a pedigree, and it survives a photocopier.
+
+    The stroke is #FFFFFF and not `currentColor`. Directus loads this
+    through an <img>, and an SVG referenced that way has no parent to
+    inherit from — `currentColor` resolves to the element's own initial
+    colour, which is black, so the first version came out black on the
+    project colour instead of white on it. The favicon beside it is the
+    same drawing in #2A78D6, because that one sits on a browser tab
+    rather than on the project colour.
+  -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="7" width="14" height="14" rx="1"/>
+    <circle cx="48" cy="14" r="7"/>
+    <path d="M23 14h18"/>
+    <path d="M32 14v24"/>
+    <path d="M32 38 42 48 32 58 22 48Z"/>
+  </g>
+</svg>

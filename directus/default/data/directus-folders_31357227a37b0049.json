@@ -1,0 +1,11 @@
+{
+  "collection": "directus_folders",
+  "primaryKey": "id",
+  "records": [
+    {
+      "id": "2020801e-0573-4914-a4a5-043a929482ba",
+      "name": "Brand",
+      "parent": null
+    }
+  ]
+}

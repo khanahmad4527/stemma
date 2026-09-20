@@ -1,0 +1,39 @@
+{
+  "name": "@stemma/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "contrast": "node checks/contrast.mjs"
+  },
+  "dependencies": {
+    "@react-router/node": "7.18.4",
+    "@react-router/serve": "7.18.4",
+    "d3-hierarchy": "3.1.2",
+    "d3-selection": "3.0.0",
+    "d3-transition": "3.0.1",
+    "d3-zoom": "3.0.0",
+    "isbot": "5.2.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router": "7.18.4"
+  },
+  "devDependencies": {
+    "@react-router/dev": "7.18.4",
+    "@types/d3-hierarchy": "3.1.7",
+    "@types/d3-selection": "3.0.12",
+    "@types/d3-transition": "3.0.9",
+    "@types/d3-zoom": "3.0.8",
+    "@types/node": "22.20.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "playwright": "1.63.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.3",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "license": "PolyForm-Strict-1.0.0"
+}

@@ -1,0 +1,43 @@
+{
+  "files": [
+    "associations_0d0eff7483f9df60.json",
+    "citation-links_4c0f36c8be63baa6.json",
+    "citations_6058e1ef6b9354a9.json",
+    "couples_76f486f47ef88d7c.json",
+    "directus-activity_063739d0b530e17d.json",
+    "directus-files_4499bb6c75d36156.json",
+    "directus-oauth-clients_63efa385b417eab7.json",
+    "directus-oauth-codes_b5c765e4a5d388cd.json",
+    "directus-oauth-consents_c5be86d03d4c8bdf.json",
+    "directus-oauth-tokens_216e2f4a23a69aef.json",
+    "directus-revisions_2a93ea27975f81ab.json",
+    "directus-sessions_9fff20d7606f239c.json",
+    "event-participants_dbdcb683e64d9e5e.json",
+    "event-types_ff9ea98da5552e51.json",
+    "events_862417b9e7c3720b.json",
+    "media-links_7660cb3c9af23282.json",
+    "media-subjects_caa4cf32325c0f47.json",
+    "media_721c9525ade2ea89.json",
+    "parentage_c57058f3863b104b.json",
+    "person-names_80060307036d67ac.json",
+    "persons_d39245fa8f8a21c2.json",
+    "place-names_43d61888259b6cc6.json",
+    "places_a48fcb713243b3d4.json",
+    "repositories_a8038884f8ec5d33.json",
+    "sources_878a52fc5ff6a57d.json",
+    "stemma-events_42d60d2ad8841c50.json",
+    "stemma-evidence_343761ca0f6aa976.json",
+    "stemma-graph_219fb61f7f1b545b.json",
+    "stemma-media_fc01d92628c84906.json",
+    "stemma-places_792fb0242e4ea86c.json",
+    "stemma-tenancy_0d98f17c53ea62f6.json",
+    "tree-invitations_fb9a54a6bd3df1d5.json",
+    "tree-members_e675c0deb4184555.json",
+    "trees_29d807300a961b0c.json"
+  ],
+  "snapshot": {
+    "directus": "12.3.1",
+    "vendor": "postgres",
+    "version": 1
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "collection": "directus_settings",
+  "primaryKey": "id",
+  "records": [
+    {
+      "ai_anthropic_allowed_models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-6"
+      ],
+      "ai_google_allowed_models": [
+        "gemini-3-pro-preview",
+        "gemini-3-flash-preview",
+        "gemini-2.5-pro",
+        "gemini-2.5-flash"
+      ],
+      "ai_openai_allowed_models": [
+        "gpt-5.4-nano",
+        "gpt-5.4-mini",
+        "gpt-5.4"
+      ],
+      "ai_openai_compatible_base_url": null,
+      "ai_openai_compatible_models": null,
+      "ai_openai_compatible_name": null,
+      "ai_system_prompt": null,
+      "ai_translation_default_model": null,
+      "ai_translation_glossary": null,
+      "ai_translation_style_guide": null,
+      "auth_login_attempts": 25,
+      "auth_password_policy": null,
+      "basemaps": null,
+      "collaborative_editing_enabled": false,
+      "custom_aspect_ratios": null,
+      "custom_css": "/* Written by `pnpm brand` — edit bootstrap/src/brand.ts, not here. */\n/* Global bookmarks are saved views, not collections. The icon colour\n   comes from the preset; the label needs CSS, because no theme rule\n   distinguishes a bookmark row from a collection row. The :has()\n   matches this project's own bookmark colour, so a contributor's\n   personal bookmark keeps the default foreground. */\nbody.light .content-navigation .v-list-item.bookmark:has(.v-icon[style*=\"#BB7E00\"]) .v-list-item-content {\n  color: #8A5D00;\n}\nbody.dark .content-navigation .v-list-item.bookmark:has(.v-icon[style*=\"#BB7E00\"]) .v-list-item-content {\n  color: #E0A94A;\n}",
+      "default_appearance": "auto",
+      "default_language": "en-US",
+      "default_save_action": "save-and-quit",
+      "default_theme_dark": null,
+      "default_theme_light": null,
+      "id": 1,
+      "mapbox_key": null,
+      "mcp_allow_deletes": false,
+      "mcp_enabled": false,
+      "mcp_oauth_cimd_enabled": false,
+      "mcp_oauth_dcr_enabled": false,
+      "mcp_oauth_enabled": false,
+      "mcp_prompts_collection": null,
+      "mcp_system_prompt": null,
+      "mcp_system_prompt_enabled": true,
+      "module_bar": null,
+      "org_name": null,
+      "product_updates": false,
+      "project_color": "#2A78D6",
+      "project_descriptor": "Family trees",
+      "project_name": "Stemma",
+      "project_owner": "cihote7604@airychen.com",
+      "project_status": null,
+      "project_url": "http://localhost:8060",
+      "project_usage": null,
+      "public_note": "**Stemma** — a multi-tenant genealogy backend.\n\nA family tree is a directed acyclic graph, not a tree: cousins marry, and the same ancestor legitimately appears twice in one chart. Living people are suppressed by a stored flag, not a computed filter, so the public rule stays a flat indexable comparison.",
+      "public_registration": false,
+      "public_registration_email_filter": null,
+      "public_registration_role": null,
+      "public_registration_verify_email": true,
+      "report_bug_url": null,
+      "report_error_url": null,
+      "report_feature_url": null,
+      "storage_asset_presets": null,
+      "storage_asset_transform": "all",
+      "theme_dark_overrides": {
+        "navigation": {
+          "modules": {
+            "background": "#14243A"
+          }
+        },
+        "primary": "#6FA8F0"
+      },
+      "theme_light_overrides": {
+        "navigation": {
+          "modules": {
+            "background": "#14243A"
+          }
+        },
+        "primary": "#1F66BE"
+      },
+      "visual_editor_urls": null
+    }
+  ]
+}

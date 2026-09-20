@@ -1,0 +1,1776 @@
+{
+  "collection": "directus_translations",
+  "primaryKey": "id",
+  "records": [
+    {
+      "id": "016edba3-43ff-4b9b-948d-2136764b0061",
+      "key": "stemma_c_education",
+      "language": "en-US",
+      "value": "Education"
+    },
+    {
+      "id": "0279bb68-d55a-4dcd-b8af-1999dcbfb751",
+      "key": "stemma_c_person",
+      "language": "en-US",
+      "value": "Person"
+    },
+    {
+      "id": "027c0d41-100e-4053-9e82-adbba171db7f",
+      "key": "stemma_iface_person_graph",
+      "language": "en-US",
+      "value": "Person graph"
+    },
+    {
+      "id": "02b6fed7-7296-4030-8a04-fe6bb3cb0170",
+      "key": "stemma_c_municipality",
+      "language": "en-US",
+      "value": "Municipality"
+    },
+    {
+      "id": "02f3d563-597a-44cc-8599-97d9bf780c9f",
+      "key": "stemma_c_foster",
+      "language": "en-US",
+      "value": "Foster"
+    },
+    {
+      "id": "03d037b5-8ef6-4f7e-a71f-089c594463fd",
+      "key": "stemma_c_executor",
+      "language": "en-US",
+      "value": "Executor"
+    },
+    {
+      "id": "045fd845-d715-4705-9c34-928c35623391",
+      "key": "stemma_note_publishable",
+      "language": "en-US",
+      "value": "Whether this may appear on the public site. Off unless the licence allows it and nobody in it is living or restricted."
+    },
+    {
+      "id": "05a91019-9658-449c-ab0f-139b7f16d06c",
+      "key": "stemma_folder_events",
+      "language": "en-US",
+      "value": "What happened, and when. Dates are five columns rather than one, because genealogical dates are ranges with qualifiers: about 1850, before 1900, between 1852 and 1855, 24 Feb 1750/51."
+    },
+    {
+      "id": "05ce7724-40fb-4c8f-a554-d4413c25959a",
+      "key": "stemma_note_age_recorded",
+      "language": "en-US",
+      "value": "The age as the record states it — 'aged 74' on a death certificate. Kept because it is the evidence for a calculated birth year, not a substitute for one."
+    },
+    {
+      "id": "07a371e8-c283-4259-8e64-03bd85e1954a",
+      "key": "stemma_c_adoptive",
+      "language": "en-US",
+      "value": "Adoptive"
+    },
+    {
+      "id": "08787cac-7a85-4bde-aa9c-4d812ed30dc8",
+      "key": "stemma_c_estimated",
+      "language": "en-US",
+      "value": "Estimated"
+    },
+    {
+      "id": "0ad44bb1-c05f-49b7-93eb-0510b9d055d2",
+      "key": "stemma_note_file_is_public_ok",
+      "language": "en-US",
+      "value": "Set by the database: the file's media row is publishable and shows nobody living or restricted."
+    },
+    {
+      "id": "0b5bd003-d892-4c5b-a8ae-79d01cda6b00",
+      "key": "stemma_note_associations",
+      "language": "en-US",
+      "value": "Relationships that are neither descent nor union: enslaved by, apprenticed to, employed by. Directed — person_a is the one the type describes. Roles inside an event (witness, godparent) belong on event_participants instead."
+    },
+    {
+      "id": "0dbdcad8-dfd5-4309-b4ea-647822228b5a",
+      "key": "stemma_note_evidence",
+      "language": "en-US",
+      "value": "Direct: answers the question by itself. Indirect: answers it only with other facts. Negative: the record was searched and the person was not there — keep these; they are the research log's most valuable entries."
+    },
+    {
+      "id": "0e33552f-cf10-41a0-90a5-1352564de7a3",
+      "key": "stemma_note_name_patronymic",
+      "language": "en-US",
+      "value": "Jónsdóttir, Ivanovich, bint Ahmad. Not a family name and not inherited; shown where the tree's name order puts it."
+    },
+    {
+      "id": "0fe20aa9-f446-4b35-8152-c0371237dd1b",
+      "key": "stemma_c_married",
+      "language": "en-US",
+      "value": "Married"
+    },
+    {
+      "id": "108de047-9487-4a59-a542-ff9e6f7335e4",
+      "key": "stemma_note_source_repository",
+      "language": "en-US",
+      "value": "Where this source is held."
+    },
+    {
+      "id": "1131f8ab-3959-4f56-8d75-72dce68a1d59",
+      "key": "stemma_c_negative",
+      "language": "en-US",
+      "value": "Negative"
+    },
+    {
+      "id": "121acb6f-c304-4d90-a9a0-552f9ddf283c",
+      "key": "stemma_note_gov_id",
+      "language": "en-US",
+      "value": "GOV (Genealogisches Orts-Verzeichnis) identifier — the German genealogy standard for historical places."
+    },
+    {
+      "id": "126cc5cf-acd1-49fd-92bc-0a3e2a691dd0",
+      "key": "stemma_c_town",
+      "language": "en-US",
+      "value": "Town"
+    },
+    {
+      "id": "128f2642-8bfb-433c-b712-a6e91747dd54",
+      "key": "stemma_note_edge_event",
+      "language": "en-US",
+      "value": "The event behind this edge — the adoption order, the fostering placement, the guardianship grant."
+    },
+    {
+      "id": "12b2661d-e7a4-4ffb-a62d-f7adef7c9a12",
+      "key": "stemma_note_name_parts",
+      "language": "en-US",
+      "value": "Parts the columns cannot hold: generation names, clan names, geographic or occupational bynames. A list of type/value pairs."
+    },
+    {
+      "id": "12df80b0-adf6-4d6c-9b58-f4953a966442",
+      "key": "stemma_note_tree_first_published_at",
+      "language": "en-US",
+      "value": "When is_public was first switched on. Set once by the database; freezes the slug."
+    },
+    {
+      "id": "14944fb8-5cb1-4964-9c35-f2fc78a67170",
+      "key": "stemma_c_presumed_by_age",
+      "language": "en-US",
+      "value": "Presumed by age"
+    },
+    {
+      "id": "16269db5-c33f-4b37-9970-2e82e2ff0dd5",
+      "key": "stemma_note_date_earliest",
+      "language": "en-US",
+      "value": "The earliest day this could be, in the Gregorian calendar whatever the original used. Empty for 'before' dates and phrases."
+    },
+    {
+      "id": "16d943c3-c9fb-4854-9254-2c26a29d3729",
+      "key": "stemma_c_museum",
+      "language": "en-US",
+      "value": "Museum"
+    },
+    {
+      "id": "16df0882-5a6f-4616-afba-869b621866fd",
+      "key": "stemma_c_parent",
+      "language": "en-US",
+      "value": "Parent"
+    },
+    {
+      "id": "17ed35b7-83d0-4e82-80ef-7d193fec49c4",
+      "key": "stemma_note_tree_legacy_contact",
+      "language": "en-US",
+      "value": "Who to contact about this tree if its owner cannot be reached. Genealogists die; the tree is what the family wants."
+    },
+    {
+      "id": "182605e8-0348-4b79-9a9b-5da28df4819f",
+      "key": "stemma_c_private",
+      "language": "en-US",
+      "value": "Private"
+    },
+    {
+      "id": "1925588e-12e5-48ac-8f57-48a723ecb3d0",
+      "key": "stemma_c_principal",
+      "language": "en-US",
+      "value": "Principal"
+    },
+    {
+      "id": "195a5ee1-c145-4680-801e-d9fa99def743",
+      "key": "stemma_c_immigrant",
+      "language": "en-US",
+      "value": "Immigrant"
+    },
+    {
+      "id": "1a02a365-6c8b-485f-b55b-197f96b93ef0",
+      "key": "stemma_c_country",
+      "language": "en-US",
+      "value": "Country"
+    },
+    {
+      "id": "1a4cce45-a9ba-4d54-bf99-c40805eaeede",
+      "key": "stemma_note_person_names",
+      "language": "en-US",
+      "value": "Every name a person is recorded under — at birth, on marriage, on the ship manifest, in orders. A single name column throws away the thing people actually search on."
+    },
+    {
+      "id": "1b66cdc6-5517-4577-9f5a-850d89dee01b",
+      "key": "stemma_c_death_record",
+      "language": "en-US",
+      "value": "Death recorded"
+    },
+    {
+      "id": "1b8db1dd-0042-4fff-bfec-46a725c5ec2a",
+      "key": "stemma_c_guardian",
+      "language": "en-US",
+      "value": "Guardian"
+    },
+    {
+      "id": "1e5c6870-7e9a-4c98-a291-7ef72b85faa5",
+      "key": "stemma_c_editor",
+      "language": "en-US",
+      "value": "Editor"
+    },
+    {
+      "id": "1f8886cc-1ccf-4f44-9274-4b6764052abc",
+      "key": "stemma_c_reported",
+      "language": "en-US",
+      "value": "Reported by a relative"
+    },
+    {
+      "id": "1fdee1e6-ebf3-467d-95da-05460daed762",
+      "key": "stemma_c_officiant",
+      "language": "en-US",
+      "value": "Officiant"
+    },
+    {
+      "id": "213cd05c-69cc-4852-8709-abf9b5c2032f",
+      "key": "stemma_c_village",
+      "language": "en-US",
+      "value": "Village"
+    },
+    {
+      "id": "21a6d700-c276-43bb-8cd9-39a24da1f132",
+      "key": "stemma_note_privacy_years_after_death",
+      "language": "en-US",
+      "value": "Keep a person restricted for this many years after their death. Zero publishes on death. Some archives use 30; some families, 'not while the widow is alive'."
+    },
+    {
+      "id": "21b28ad5-1812-4243-8f38-e05b638f8a6f",
+      "key": "stemma_note_tree_name",
+      "language": "en-US",
+      "value": "What the family calls itself."
+    },
+    {
+      "id": "21cf7749-4ff7-4581-a612-5c6ac281fd3f",
+      "key": "stemma_c_informant",
+      "language": "en-US",
+      "value": "Informant"
+    },
+    {
+      "id": "21ee810a-934b-487f-8a98-8057ce3c8869",
+      "key": "stemma_c_disproven",
+      "language": "en-US",
+      "value": "Disproven"
+    },
+    {
+      "id": "21fb37f8-24e3-4e62-817d-5141022ae220",
+      "key": "stemma_c_county",
+      "language": "en-US",
+      "value": "County"
+    },
+    {
+      "id": "221f1dcc-b9cf-4d51-81fd-a83bc5e78abe",
+      "key": "stemma_c_coptic",
+      "language": "en-US",
+      "value": "Coptic"
+    },
+    {
+      "id": "2286ffb2-ada8-4b7d-bc0c-3eb4686c8b59",
+      "key": "stemma_c_document",
+      "language": "en-US",
+      "value": "Document"
+    },
+    {
+      "id": "23a65d76-66c0-4c6e-824e-b2d413c4974b",
+      "key": "stemma_note_name_lang",
+      "language": "en-US",
+      "value": "Language tag (he, ar, ru, zh-Hant) so a renderer can choose direction and font, and so two romanisations say what they romanise."
+    },
+    {
+      "id": "23b03213-7e60-42e8-8562-3570ef75a7c7",
+      "key": "stemma_note_lineage_phrase",
+      "language": "en-US",
+      "value": "For lineage 'other': the relationship in words."
+    },
+    {
+      "id": "23ff43a8-7498-4d49-8281-f954625e8138",
+      "key": "stemma_vm_slug",
+      "language": "en-US",
+      "value": "Lower-case letters, digits and hyphens only — this ends up in a URL that people share."
+    },
+    {
+      "id": "26ff0c67-57e0-45e0-9108-c6c0ebe3c836",
+      "key": "stemma_c_intersex",
+      "language": "en-US",
+      "value": "Intersex"
+    },
+    {
+      "id": "28376f40-35d7-4bb2-a791-96ebdba58b89",
+      "key": "stemma_note_region",
+      "language": "en-US",
+      "value": "Where in the image, as fractions of width and height (0–1), so the box survives a resize."
+    },
+    {
+      "id": "29f48b9a-a1b8-4895-82a1-52df577788e7",
+      "key": "stemma_c_professional",
+      "language": "en-US",
+      "value": "Professional"
+    },
+    {
+      "id": "2a6fc73b-898d-405b-bb02-264c0ece197c",
+      "key": "stemma_c_witness",
+      "language": "en-US",
+      "value": "Witness"
+    },
+    {
+      "id": "2a793726-162d-40f0-84d1-2372773aa824",
+      "key": "stemma_c_accepted",
+      "language": "en-US",
+      "value": "Accepted"
+    },
+    {
+      "id": "2a9201d8-e29a-4738-959b-338362122b69",
+      "key": "stemma_c_ethiopian",
+      "language": "en-US",
+      "value": "Ethiopian"
+    },
+    {
+      "id": "2b9cbc21-21d5-4b44-9a7a-8a26d7495a29",
+      "key": "stemma_c_title",
+      "language": "en-US",
+      "value": "Title"
+    },
+    {
+      "id": "2cba3e23-7462-4a2e-bcde-0abb7207db43",
+      "key": "stemma_c_owner",
+      "language": "en-US",
+      "value": "Owner"
+    },
+    {
+      "id": "2ce00142-9482-4f26-8ac6-d33d73e9c540",
+      "key": "stemma_c_undetermined",
+      "language": "en-US",
+      "value": "Undetermined"
+    },
+    {
+      "id": "2da6e57b-5278-4008-a888-ff1d71e952b0",
+      "key": "stemma_note_name_event",
+      "language": "en-US",
+      "value": "The event that gave this name its date — the marriage, the naturalisation, the profession."
+    },
+    {
+      "id": "2f1e720a-11f3-4d11-8f4e-a76802a3ab8e",
+      "key": "stemma_iface_person_graph_desc",
+      "language": "en-US",
+      "value": "Parents, partners and children on the person's own form, with the standard pedigree symbols. Navigates on click; stores nothing."
+    },
+    {
+      "id": "2ff272ae-adfe-4a5b-a071-0dfc6d352eeb",
+      "key": "stemma_c_enslaved_by",
+      "language": "en-US",
+      "value": "enslaved by"
+    },
+    {
+      "id": "303edeb3-e00d-4977-bde9-6b2a4e81dae4",
+      "key": "stemma_folder_evidence",
+      "language": "en-US",
+      "value": "How we know. Two censuses giving different birth years are kept as two assertions with their citations and one marked as the conclusion — conflicting evidence is a thing to display, not a thing to overwrite."
+    },
+    {
+      "id": "31a4f6d4-33ff-4bb2-a637-d590927b09df",
+      "key": "stemma_c_religious",
+      "language": "en-US",
+      "value": "Religious"
+    },
+    {
+      "id": "31ba393d-134b-4bfe-a22a-84d67b857be7",
+      "key": "stemma_c_property",
+      "language": "en-US",
+      "value": "Property"
+    },
+    {
+      "id": "32ed70ff-3ce8-470b-b8b4-d0c22e949f1c",
+      "key": "stemma_c_hospital",
+      "language": "en-US",
+      "value": "Hospital"
+    },
+    {
+      "id": "33476787-cc48-481a-bb92-f0195faa728a",
+      "key": "stemma_note_event_value",
+      "language": "en-US",
+      "value": "What the record says the fact was: Blacksmith for an occupation, Roman Catholic for a religion, the cause on a death."
+    },
+    {
+      "id": "33f44fba-eb08-4cad-8a18-29b7c7457ee1",
+      "key": "stemma_c_manor",
+      "language": "en-US",
+      "value": "Manor"
+    },
+    {
+      "id": "34e00006-a644-4c19-8019-e2398b44084e",
+      "key": "stemma_note_place_original",
+      "language": "en-US",
+      "value": "Where, exactly as the record wrote it — 'Danzig, Westpreußen'. The place link is the interpretation; this is the evidence."
+    },
+    {
+      "id": "3506115a-4ecf-4574-a167-bda73dcd9fa1",
+      "key": "stemma_c_sealing",
+      "language": "en-US",
+      "value": "Sealing"
+    },
+    {
+      "id": "3733ea2a-27af-4da1-8c25-299bd96f04a4",
+      "key": "stemma_c_aka",
+      "language": "en-US",
+      "value": "Also known as"
+    },
+    {
+      "id": "377ff89e-fe68-469d-b982-2d3d0d317979",
+      "key": "stemma_c_archive",
+      "language": "en-US",
+      "value": "Archive"
+    },
+    {
+      "id": "383b106b-e23d-44f9-8e11-06ce515c6d25",
+      "key": "stemma_note_media_subjects",
+      "language": "en-US",
+      "value": "Who is in a photograph, and where. A face becomes a link."
+    },
+    {
+      "id": "3893450c-78c6-4b18-8022-255c4de6487d",
+      "key": "stemma_note_tree_home_person",
+      "language": "en-US",
+      "value": "Where the public site opens: the tree's starting person."
+    },
+    {
+      "id": "38a0b247-f94c-4551-b77e-2435ba1e9607",
+      "key": "stemma_note_tree_owner",
+      "language": "en-US",
+      "value": "The account answerable for this tree. Always also a member at owner; if this account is removed, the database promotes another owner."
+    },
+    {
+      "id": "3a09dc3a-7344-4e5e-8d9c-2206482f0cab",
+      "key": "stemma_c_household_member",
+      "language": "en-US",
+      "value": "Household member"
+    },
+    {
+      "id": "3c9c39ff-b781-4e47-ba56-8fb779d6fc40",
+      "key": "stemma_c_all_rights_reserved",
+      "language": "en-US",
+      "value": "All rights reserved"
+    },
+    {
+      "id": "3cf30bec-2d7e-4b01-8ae9-ca7b920a4299",
+      "key": "stemma_c_region",
+      "language": "en-US",
+      "value": "Region"
+    },
+    {
+      "id": "3d1c2d3f-1bbe-4181-8dbe-82951dd56884",
+      "key": "stemma_c_surrogate",
+      "language": "en-US",
+      "value": "Surrogate"
+    },
+    {
+      "id": "3d9a424a-c5a3-43f0-ae9a-479e86be0eef",
+      "key": "stemma_c_website",
+      "language": "en-US",
+      "value": "Website"
+    },
+    {
+      "id": "3e1e53a6-1516-4d84-98f3-aa23345b4c87",
+      "key": "stemma_c_address",
+      "language": "en-US",
+      "value": "Address"
+    },
+    {
+      "id": "3ffe029c-bcd2-4158-a43c-41740545b286",
+      "key": "stemma_note_event_participants",
+      "language": "en-US",
+      "value": "Everyone in an event who is not its subject: the godparents at a baptism, the household on a census line, the witnesses to a will. One event, many people, rather than eight events nobody can see belong together."
+    },
+    {
+      "id": "401a7da3-c3a3-4d38-b8c2-48c4546986ef",
+      "key": "stemma_c_attribute",
+      "language": "en-US",
+      "value": "Attribute"
+    },
+    {
+      "id": "437436f6-9fdc-45af-892b-7c87c88d0705",
+      "key": "stemma_note_name_prefix",
+      "language": "en-US",
+      "value": "Title or honorific written with the name — Dr, Sir, Rev."
+    },
+    {
+      "id": "44230af0-e1a1-402a-8909-00d53874c13c",
+      "key": "stemma_c_province",
+      "language": "en-US",
+      "value": "Province"
+    },
+    {
+      "id": "44bbd5c3-b6f4-4ec8-9cb4-cfabce1ba76b",
+      "key": "stemma_c_gregorian",
+      "language": "en-US",
+      "value": "Gregorian"
+    },
+    {
+      "id": "46ca7115-8130-4b64-8a22-6246e7adf7b6",
+      "key": "stemma_note_living_cutoff_years",
+      "language": "en-US",
+      "value": "Someone born more than this many years ago with no death recorded is flagged for review as presumed dead. Flagged, never flipped — there are 110-year-olds."
+    },
+    {
+      "id": "46eb4cab-90cf-4ce0-a90c-bb9f539a670b",
+      "key": "stemma_c_employee",
+      "language": "en-US",
+      "value": "Employee"
+    },
+    {
+      "id": "474a9b03-5a3c-40df-95ca-fed9c7d50614",
+      "key": "stemma_c_ship",
+      "language": "en-US",
+      "value": "Ship"
+    },
+    {
+      "id": "47953649-593b-4ea2-ae14-6a5bf809150a",
+      "key": "stemma_c_exact",
+      "language": "en-US",
+      "value": "Exact"
+    },
+    {
+      "id": "49b0bff0-2bb1-44aa-a6db-6a7767468795",
+      "key": "stemma_folder_places",
+      "language": "en-US",
+      "value": "Where it happened, under the name it had at the time. Danzig and Gdansk are one place and two names, each with the years it was current."
+    },
+    {
+      "id": "49d0d1b3-12b5-4913-8af5-80b95482d906",
+      "key": "stemma_note_default_calendar",
+      "language": "en-US",
+      "value": "What a date is assumed to be written in when nothing says otherwise."
+    },
+    {
+      "id": "4aa0d977-7d83-45d0-80d4-85d475003e74",
+      "key": "stemma_c_occupation",
+      "language": "en-US",
+      "value": "Occupation"
+    },
+    {
+      "id": "4abeee9b-96e9-44c0-ad80-573df44c80b1",
+      "key": "stemma_c_indirect",
+      "language": "en-US",
+      "value": "Indirect"
+    },
+    {
+      "id": "4ac57015-5f32-4f46-b02c-5c5b56b27c20",
+      "key": "stemma_note_source_type",
+      "language": "en-US",
+      "value": "Original: the record itself. Derivative: an index, transcription or abstract of it. Authored: a book or article that interpreted records. The first question Evidence Explained asks."
+    },
+    {
+      "id": "4aeed74e-f748-41a2-bc4a-d4bfe27a8c74",
+      "key": "stemma_note_person_portrait",
+      "language": "en-US",
+      "value": "The face shown on charts. Only ever reaches the public site when the media row is marked publishable, its licence allows it, and nobody in the picture is living or restricted — a photograph of a dead ancestor under all-rights-reserved is still not ours to publish."
+    },
+    {
+      "id": "4db82047-0670-4a36-9541-520ab8e88a14",
+      "key": "stemma_c_cc0",
+      "language": "en-US",
+      "value": "CC0"
+    },
+    {
+      "id": "4f3ffb05-67b2-445d-9b3b-64521cbf13cd",
+      "key": "stemma_c_migration",
+      "language": "en-US",
+      "value": "Migration"
+    },
+    {
+      "id": "4f51532e-a7d6-4df9-a249-c739e4c4ce80",
+      "key": "stemma_note_name_script_original",
+      "language": "en-US",
+      "value": "The name in its own script, unromanised — Hebrew, Arabic, Cyrillic, Han. Kept beside the transliteration because a transliteration is a lossy guess and the original is the evidence."
+    },
+    {
+      "id": "5052286b-79ce-465a-98c5-d0165830813f",
+      "key": "stemma_note_citation_text",
+      "language": "en-US",
+      "value": "The citation formatted as you would print it, if you want to write it yourself."
+    },
+    {
+      "id": "52c78ded-5564-405a-9322-012ed8b42eb6",
+      "key": "stemma_note_couple_sort",
+      "language": "en-US",
+      "value": "Order among a person's unions when the events do not date them."
+    },
+    {
+      "id": "53820af8-a6bc-4db1-9055-62855ab98a54",
+      "key": "stemma_note_information",
+      "language": "en-US",
+      "value": "Primary: the informant was present at the fact. Secondary: they heard it. Undetermined: the record does not say who informed."
+    },
+    {
+      "id": "553cec19-d85c-470c-a8f6-1e460d02d49d",
+      "key": "stemma_note_citation_links_collection",
+      "language": "en-US",
+      "value": "Which names, edges, events and places a citation supports. A junction; edit from the citation."
+    },
+    {
+      "id": "560acf02-5dac-418d-bce5-068bcc711024",
+      "key": "stemma_note_applies_to",
+      "language": "en-US",
+      "value": "Whether this kind of event is filed under a person, a couple, or either."
+    },
+    {
+      "id": "573d39b0-5d98-46c1-850b-d0f33b379b05",
+      "key": "stemma_c_city",
+      "language": "en-US",
+      "value": "City"
+    },
+    {
+      "id": "577e303a-a290-4965-a443-76a80f752204",
+      "key": "stemma_note_persons",
+      "language": "en-US",
+      "value": "A person as one tree records them. Deliberately thin: names live in person_names because people have more than one, and facts live in events because columns on this table run out."
+    },
+    {
+      "id": "57d3d365-f48c-4c5d-b956-9de845d1ab07",
+      "key": "stemma_c_employed_by",
+      "language": "en-US",
+      "value": "employed by"
+    },
+    {
+      "id": "57f16940-d90b-407c-ab78-7cd129214bf3",
+      "key": "stemma_note_event_types",
+      "language": "en-US",
+      "value": "The vocabulary of things that happen. A row with no tree is global; a tree may add its own. GEDCOM lacks half of what genealogists record, which is why this is a table and not a fixed list."
+    },
+    {
+      "id": "597ff812-5e84-419a-ad4c-05cccbbdaa42",
+      "key": "stemma_c_contributor",
+      "language": "en-US",
+      "value": "Contributor"
+    },
+    {
+      "id": "5b9b922d-b30d-4f90-a7f2-00f6d62cf298",
+      "key": "stemma_note_person_sex",
+      "language": "en-US",
+      "value": "The sex a source recorded — which is not a claim about gender identity, and is not always known. Named sex_recorded so the distinction survives contact with whoever reads the column next."
+    },
+    {
+      "id": "5e30dae0-584b-4e72-b2f1-d580021f5694",
+      "key": "stemma_note_system_group",
+      "language": "en-US",
+      "value": "The columns the database maintains: the row's id, and who touched it when. Collapsed because they are rarely the question, present because \"who changed this?\" has to have an answer that is not the activity log."
+    },
+    {
+      "id": "5e9c1361-af88-4dfa-b5ce-2f1a7911099c",
+      "key": "stemma_note_confidence",
+      "language": "en-US",
+      "value": "How far to trust this. GEDCOM's scale: 0 unreliable or estimated, 1 questionable, 2 secondary evidence, 3 direct and primary."
+    },
+    {
+      "id": "6021ac13-f379-48cd-b60f-9a74906df55d",
+      "key": "stemma_c_confidence_0",
+      "language": "en-US",
+      "value": "0 — unreliable or estimated"
+    },
+    {
+      "id": "6195e95f-0441-43f3-8616-21550aac2304",
+      "key": "stemma_c_beneficiary",
+      "language": "en-US",
+      "value": "Beneficiary"
+    },
+    {
+      "id": "62948b7e-4ec4-4145-b666-2a160c7189ba",
+      "key": "stemma_note_citation_confidence",
+      "language": "en-US",
+      "value": "How far this citation can be trusted for what it is cited for."
+    },
+    {
+      "id": "62ac1295-b69c-4b5e-9ba3-a4155c992989",
+      "key": "stemma_note_date_calendar",
+      "language": "en-US",
+      "value": "The calendar the original was written in. The range is always Gregorian; this says what it was converted from."
+    },
+    {
+      "id": "6354451b-3af9-4853-8098-8cb4e155b077",
+      "key": "stemma_note_couple_person",
+      "language": "en-US",
+      "value": "The two people in the union. Unordered: (a, b) and (b, a) are the same couple, and the database enforces it with a unique index on the sorted pair."
+    },
+    {
+      "id": "6366935f-0203-436f-b7d9-ba609463044f",
+      "key": "stemma_note_date_latest",
+      "language": "en-US",
+      "value": "The latest day this could be, Gregorian. Empty for 'after' dates and phrases. Sort on earliest, display the original."
+    },
+    {
+      "id": "6400478d-d1fc-46db-a8ac-03d46509d4cb",
+      "key": "stemma_note_multiple_birth",
+      "language": "en-US",
+      "value": "Twins and triplets share this value. Not derivable from shared parents — it needs the same birth — and GEDCOM has no marker for it."
+    },
+    {
+      "id": "6424729d-ed96-4a8e-b80a-253c50b5e83b",
+      "key": "stemma_note_person_notes",
+      "language": "en-US",
+      "value": "Research notes. Where a living relative's address, an unproven allegation or a cause of death ends up — so never public, even for the dead."
+    },
+    {
+      "id": "64b4508f-8749-4c58-a9a3-ac259f2200c1",
+      "key": "stemma_note_ends_life",
+      "language": "en-US",
+      "value": "An event of this type on a person switches their living flag off. Death, burial, cremation; a tree may add its own."
+    },
+    {
+      "id": "64c5037e-fdcb-41b5-bc72-d280a8926332",
+      "key": "stemma_note_media",
+      "language": "en-US",
+      "value": "A file as this tree describes it: caption, date, who holds the rights. The bytes are in the file library; this row is what may be said about them, and whether they may be published."
+    },
+    {
+      "id": "65174314-e376-43b6-89cd-5eac93e9960e",
+      "key": "stemma_note_geonames_id",
+      "language": "en-US",
+      "value": "GeoNames identifier, for agreeing with other trees and other systems."
+    },
+    {
+      "id": "66763f93-abbe-44ca-aae9-68acac52c276",
+      "key": "stemma_c_couple",
+      "language": "en-US",
+      "value": "Couple"
+    },
+    {
+      "id": "669a9156-8dc7-4185-b3f1-f4150109c062",
+      "key": "stemma_note_date_time",
+      "language": "en-US",
+      "value": "Time of day, where a record gives it. Birth order of twins; little else."
+    },
+    {
+      "id": "66a1ab5a-e96e-482c-be16-a4e3a804b8dc",
+      "key": "stemma_note_place_names",
+      "language": "en-US",
+      "value": "What a place was called, and when. Danzig until 1945, Gdańsk since. An event shows the name that was valid on its date."
+    },
+    {
+      "id": "66ed3a13-1686-4d77-8b57-da7f0fd6f67a",
+      "key": "stemma_c_japanese",
+      "language": "en-US",
+      "value": "Japanese era"
+    },
+    {
+      "id": "67b14b5b-565f-4d19-8827-92198f37e15c",
+      "key": "stemma_c_french_republican",
+      "language": "en-US",
+      "value": "French Republican"
+    },
+    {
+      "id": "67ef0b52-2ce7-4514-b4f1-73f88ffb85e9",
+      "key": "stemma_note_private_notes",
+      "language": "en-US",
+      "value": "Working notes. Never shown to the public, whoever the row is about."
+    },
+    {
+      "id": "686fa5e0-903f-4334-a564-ef8365a380df",
+      "key": "stemma_note_association_a",
+      "language": "en-US",
+      "value": "The person the relationship type describes."
+    },
+    {
+      "id": "687200cd-0a65-4e8a-9a8d-b60f2250ff1c",
+      "key": "stemma_note_date_accessed",
+      "language": "en-US",
+      "value": "When you saw it. Websites change."
+    },
+    {
+      "id": "6983618f-5bfd-4e42-a260-134237a7401b",
+      "key": "stemma_c_period",
+      "language": "en-US",
+      "value": "Period"
+    },
+    {
+      "id": "69f44ba7-1699-479a-9481-8eed624393e9",
+      "key": "stemma_c_sibling",
+      "language": "en-US",
+      "value": "Sibling"
+    },
+    {
+      "id": "69f781b8-66c7-426b-9f1d-9cf78748c980",
+      "key": "stemma_c_cemetery",
+      "language": "en-US",
+      "value": "Cemetery"
+    },
+    {
+      "id": "6a12fb14-bb02-48c0-970c-2b0743623504",
+      "key": "stemma_note_media_links",
+      "language": "en-US",
+      "value": "What this illustrates."
+    },
+    {
+      "id": "6c575819-1f55-41e2-a434-38679680e3d1",
+      "key": "stemma_c_child",
+      "language": "en-US",
+      "value": "Child"
+    },
+    {
+      "id": "6cea54f7-d681-44e5-8886-0e7df00e720b",
+      "key": "stemma_c_business_partner_of",
+      "language": "en-US",
+      "value": "business partner of"
+    },
+    {
+      "id": "6d70ef47-f830-4ed2-8e09-21366a191c9e",
+      "key": "stemma_note_name_type",
+      "language": "en-US",
+      "value": "Birth is the name recorded at birth; married one taken on a union; aka a variant or a daily-use name; immigrant the one on the manifest; professional a stage, pen or trade name; adopted the one assumed at adoption; religious one taken in orders; legal one changed by deed; title a peerage or office used as a name."
+    },
+    {
+      "id": "6dc6f673-6f76-4214-ba7c-e11acae6acbd",
+      "key": "stemma_iface_show_events",
+      "language": "en-US",
+      "value": "Show recent events"
+    },
+    {
+      "id": "6f6839a3-900e-4bc1-96d4-77ebb40a9e89",
+      "key": "stemma_c_confidence_1",
+      "language": "en-US",
+      "value": "1 — questionable"
+    },
+    {
+      "id": "71a0e769-c3d0-4ef6-b45a-8d586573146f",
+      "key": "stemma_c_interpreted",
+      "language": "en-US",
+      "value": "Interpreted"
+    },
+    {
+      "id": "72c2cf2c-1b5e-4dad-97cc-f9c4905b7914",
+      "key": "stemma_note_name_particle",
+      "language": "en-US",
+      "value": "van, de la, von, af, ibn. Displayed with the surname; sorted with or without it per the tree's convention."
+    },
+    {
+      "id": "736e5eec-8e56-45c8-a012-66e693899df4",
+      "key": "stemma_c_female",
+      "language": "en-US",
+      "value": "Female"
+    },
+    {
+      "id": "737374a2-f7cb-4fb7-af82-911c4e998032",
+      "key": "stemma_note_transcription",
+      "language": "en-US",
+      "value": "What the record says, word for word, including the mistakes."
+    },
+    {
+      "id": "73fcccd9-c1f9-4c66-80f2-d684005ed091",
+      "key": "stemma_note_sources",
+      "language": "en-US",
+      "value": "A record set — the 1881 census, a parish register, a gravestone, a book. Not the specific page; that is the citation."
+    },
+    {
+      "id": "75112e9e-9590-4943-a2c3-ab0695b0e192",
+      "key": "stemma_note_is_public_ok",
+      "language": "en-US",
+      "value": "Set by the database from the linked row's own visibility."
+    },
+    {
+      "id": "751746bc-b7df-4d1e-8ab5-f0617d925db0",
+      "key": "stemma_note_couples",
+      "language": "en-US",
+      "value": "A union between two people. Called couples rather than marriages because many unions were never marriages and produced children regardless. Marriage is an event on this row; so is divorce; so is remarrying each other — one couple, many events."
+    },
+    {
+      "id": "75a0ae29-f170-4df6-b331-17388964b1f5",
+      "key": "stemma_note_person_public_id",
+      "language": "en-US",
+      "value": "Eight characters, generated once, unique in the tree. The public URL uses this rather than a name that will change or a uuid nobody can read aloud."
+    },
+    {
+      "id": "7691faff-d89f-4ebb-b0b0-3fbf91e84752",
+      "key": "stemma_c_step",
+      "language": "en-US",
+      "value": "Step"
+    },
+    {
+      "id": "769fec20-eaef-4911-9cd4-077f9376c41f",
+      "key": "stemma_note_repositories",
+      "language": "en-US",
+      "value": "Where sources are kept: an archive, a parish, a website, somebody's attic."
+    },
+    {
+      "id": "76d32aa9-7658-453e-b986-f8ccf08af89e",
+      "key": "stemma_note_place_name",
+      "language": "en-US",
+      "value": "The current or most recognised name. Historical names go in the name list."
+    },
+    {
+      "id": "76e594fb-a64b-4997-ae58-49ca7d448d0a",
+      "key": "stemma_note_tree_slug",
+      "language": "en-US",
+      "value": "The tree's segment in a public URL. Lower-case letters, digits and hyphens. It appears in links people email to relatives, and it cannot change once the tree has been public."
+    },
+    {
+      "id": "78cac9e3-2843-4bba-85da-1be2b00df061",
+      "key": "stemma_c_audio",
+      "language": "en-US",
+      "value": "Audio"
+    },
+    {
+      "id": "79e5a8ed-ae5b-4b05-95eb-c4c417ec7726",
+      "key": "stemma_c_hebrew",
+      "language": "en-US",
+      "value": "Hebrew"
+    },
+    {
+      "id": "7a274838-663e-4203-a49e-f93d1d457da2",
+      "key": "stemma_c_neighbour_of",
+      "language": "en-US",
+      "value": "neighbour of"
+    },
+    {
+      "id": "7a372ded-a6bc-4269-a335-1d46a4f77e8f",
+      "key": "stemma_note_date_original",
+      "language": "en-US",
+      "value": "The date exactly as the source gives it — abt 1850, bef 1900, 24 Feb 1750/51, 'the winter grandmother died'. Never parsed away. The four fields below are derived from it and can be corrected by hand."
+    },
+    {
+      "id": "7b911722-5326-403f-99ef-cf7316ef6379",
+      "key": "stemma_c_enslaver",
+      "language": "en-US",
+      "value": "Enslaver"
+    },
+    {
+      "id": "7b92efcf-522d-45da-a5cc-408c7b0dc210",
+      "key": "stemma_note_tree_is_public",
+      "language": "en-US",
+      "value": "Half of the public security model. Off: nothing in the tree is readable without a membership, no exceptions. On: the other half still applies — living and restricted people stay hidden."
+    },
+    {
+      "id": "7ee19f18-de5d-4ed6-b3f0-9ae7d5b72ed9",
+      "key": "stemma_c_secondary",
+      "language": "en-US",
+      "value": "Secondary"
+    },
+    {
+      "id": "821608eb-25f3-48d8-8a23-8194ff3cb14e",
+      "key": "stemma_c_district",
+      "language": "en-US",
+      "value": "District"
+    },
+    {
+      "id": "830e4e13-afa9-4db8-8bee-014222ede1c8",
+      "key": "stemma_c_cc_by",
+      "language": "en-US",
+      "value": "CC BY"
+    },
+    {
+      "id": "84d1803e-287d-4636-9447-94c3b9bac559",
+      "key": "stemma_c_revoked",
+      "language": "en-US",
+      "value": "Revoked"
+    },
+    {
+      "id": "858ac5d2-b020-4105-9663-93bbb7b0dbf5",
+      "key": "stemma_note_has_public_reference",
+      "language": "en-US",
+      "value": "Set by the database when an event of a non-living, non-restricted person points here. A street known only from a living person's residence stays private."
+    },
+    {
+      "id": "87ed260c-b6f0-4b2f-a20e-b0418f1f2dd8",
+      "key": "stemma_c_unknown",
+      "language": "en-US",
+      "value": "Unknown"
+    },
+    {
+      "id": "88f3a8c5-ed94-449b-90e1-5a4c72169413",
+      "key": "stemma_c_military",
+      "language": "en-US",
+      "value": "Military"
+    },
+    {
+      "id": "8935334f-32d9-4b87-8ad2-b35c3a7930ca",
+      "key": "stemma_note_is_vital",
+      "language": "en-US",
+      "value": "Birth, death, marriage and their kin — the events a timeline summary shows first."
+    },
+    {
+      "id": "8a5416d7-c9d4-458e-9378-6be337546f31",
+      "key": "stemma_c_spouse",
+      "language": "en-US",
+      "value": "Spouse"
+    },
+    {
+      "id": "8a65bc13-36a1-46df-b944-b6bc78cfb328",
+      "key": "stemma_note_person_display_name",
+      "language": "en-US",
+      "value": "Maintained by the database from the name list — lowest sort order wins, in the name's own order. Read-only: editing it here would be a second source of truth. It exists because without it every list and dropdown renders a raw id."
+    },
+    {
+      "id": "8d5c451a-1571-4ca4-b44a-bc5bdd33c25a",
+      "key": "stemma_c_julian",
+      "language": "en-US",
+      "value": "Julian"
+    },
+    {
+      "id": "8e222ddd-0fb4-459d-8144-e0af08d42079",
+      "key": "stemma_c_apprenticed_to",
+      "language": "en-US",
+      "value": "apprenticed to"
+    },
+    {
+      "id": "8e834e15-325f-458b-930d-d16711a1b5e4",
+      "key": "stemma_note_file_tree",
+      "language": "en-US",
+      "value": "Which tree this file belongs to. Copied from the media row that references it; the public asset endpoint reads it."
+    },
+    {
+      "id": "91744fe4-7554-46e2-ab62-47b3e7f66a8e",
+      "key": "stemma_note_publication",
+      "language": "en-US",
+      "value": "Publisher, place and year, or the archive's series and reference."
+    },
+    {
+      "id": "9192ca1a-0d64-4be7-815a-b231f346341d",
+      "key": "stemma_c_library",
+      "language": "en-US",
+      "value": "Library"
+    },
+    {
+      "id": "9424eb1f-89d7-4bfc-a147-f71199fbb87a",
+      "key": "stemma_c_phrase",
+      "language": "en-US",
+      "value": "Phrase"
+    },
+    {
+      "id": "94257373-f1bb-4bf3-9367-5ffae206f746",
+      "key": "stemma_c_cc_by_sa",
+      "language": "en-US",
+      "value": "CC BY-SA"
+    },
+    {
+      "id": "96743bb3-3813-4dc2-be57-970f089f0aed",
+      "key": "stemma_c_video",
+      "language": "en-US",
+      "value": "Video"
+    },
+    {
+      "id": "9846f433-c01a-482f-8f4b-34daa4d628d4",
+      "key": "stemma_note_living_basis",
+      "language": "en-US",
+      "value": "Why the living flag says what it says: a death record, an age past the tree's cutoff, somebody's word, or nobody has looked."
+    },
+    {
+      "id": "98536c79-ed6a-4200-a38e-a022013c53a2",
+      "key": "stemma_c_residence",
+      "language": "en-US",
+      "value": "Residence"
+    },
+    {
+      "id": "9add6959-5fb9-42a8-9827-4b750d343cd2",
+      "key": "stemma_c_godparent",
+      "language": "en-US",
+      "value": "Godparent"
+    },
+    {
+      "id": "9d669a64-6d68-43d3-ae60-f3578d0f7c8c",
+      "key": "stemma_c_male",
+      "language": "en-US",
+      "value": "Male"
+    },
+    {
+      "id": "9de49e7f-714a-4421-9642-4414ca53a7b6",
+      "key": "stemma_note_transcript",
+      "language": "en-US",
+      "value": "For audio and video: what is said, with timestamps if you have them."
+    },
+    {
+      "id": "9e86c260-0b54-4aec-9809-3d34d0562e7f",
+      "key": "stemma_note_system_id",
+      "language": "en-US",
+      "value": "The row's uuid. Readonly — Directus generates it and the database has a default besides. Worth having on the form so it can be copied without reading it out of the address bar."
+    },
+    {
+      "id": "9f582e31-e432-4935-9546-aab63e3eeac1",
+      "key": "stemma_c_either",
+      "language": "en-US",
+      "value": "Either"
+    },
+    {
+      "id": "a05bd448-dd33-42ba-9061-362300fcfb4c",
+      "key": "stemma_note_subject_person",
+      "language": "en-US",
+      "value": "Whose event this is. Exactly one of person or couple."
+    },
+    {
+      "id": "a18b52f7-e1be-4570-923f-05bda2962730",
+      "key": "stemma_c_legal",
+      "language": "en-US",
+      "value": "Legal"
+    },
+    {
+      "id": "a1e6029a-f7de-4bad-996c-b33d06427db2",
+      "key": "stemma_note_event_description",
+      "language": "en-US",
+      "value": "A sentence fit to publish about this event."
+    },
+    {
+      "id": "a25962f2-b6ad-4c43-a1ed-cec95e7fbb43",
+      "key": "stemma_c_parish",
+      "language": "en-US",
+      "value": "Parish"
+    },
+    {
+      "id": "a3074f63-6e83-401e-8c27-3830a2539e98",
+      "key": "stemma_c_birth",
+      "language": "en-US",
+      "value": "Birth"
+    },
+    {
+      "id": "a310f428-3fc0-439c-ad61-8b4ee98b7eab",
+      "key": "stemma_c_estate",
+      "language": "en-US",
+      "value": "Estate"
+    },
+    {
+      "id": "a4469249-9c53-43c5-a7b7-57016e973ead",
+      "key": "stemma_note_participant_role",
+      "language": "en-US",
+      "value": "What this person was in the event: witness, godparent, informant, a household member on a census line."
+    },
+    {
+      "id": "a539329a-565a-4448-b5f5-b86b593164fe",
+      "key": "stemma_note_parentage_lineage",
+      "language": "en-US",
+      "value": "How the two are related. Birth is what a register asserts — 'child of' — and claims nothing about genetics. Recording the kind rather than assuming it is what lets adoption, step-parents, fostering, guardianship, donor conception and surrogacy coexist on one child without any being a special case."
+    },
+    {
+      "id": "a6710f94-1123-4c91-b127-aa7b6c701036",
+      "key": "stemma_c_cc_by_nc",
+      "language": "en-US",
+      "value": "CC BY-NC"
+    },
+    {
+      "id": "a7de0c7b-445c-4b97-9c1e-b40b818787b9",
+      "key": "stemma_c_church",
+      "language": "en-US",
+      "value": "Church"
+    },
+    {
+      "id": "a84d94f6-9ef6-4d66-bead-9b9899a979e5",
+      "key": "stemma_note_citation_url",
+      "language": "en-US",
+      "value": "A link to the image or entry. Consider archiving it; links rot."
+    },
+    {
+      "id": "a8d3dc63-2a3f-4e93-a4d4-62d1bf25be74",
+      "key": "stemma_c_farm",
+      "language": "en-US",
+      "value": "Farm"
+    },
+    {
+      "id": "a90284ef-84c7-4895-ad0b-9d8c8fb870e3",
+      "key": "stemma_note_name_order",
+      "language": "en-US",
+      "value": "Given-first or surname-first for this name. Empty uses the tree's default."
+    },
+    {
+      "id": "a9508c23-ae36-4ba7-805b-1f11607a68e5",
+      "key": "stemma_c_vital",
+      "language": "en-US",
+      "value": "Vital"
+    },
+    {
+      "id": "acb48824-a70f-48ba-a53a-ec8e8fd23239",
+      "key": "stemma_note_has_living_participant",
+      "language": "en-US",
+      "value": "Set by the database when any participant is living or restricted. Keeps the public filter flat."
+    },
+    {
+      "id": "acd5d151-0b98-4dab-8f85-0e902c68c98e",
+      "key": "stemma_c_expired",
+      "language": "en-US",
+      "value": "Expired"
+    },
+    {
+      "id": "add8299a-e389-4416-9a1e-bbb33f9ff525",
+      "key": "stemma_c_surname_first",
+      "language": "en-US",
+      "value": "Surname first"
+    },
+    {
+      "id": "ae9cc241-4582-4d1b-97b8-4d802f78843e",
+      "key": "stemma_note_event_place",
+      "language": "en-US",
+      "value": "Where, normalised to a place in this tree."
+    },
+    {
+      "id": "b0ee8d3e-59a3-4b84-bd75-ccb6272ac479",
+      "key": "stemma_note_trees",
+      "language": "en-US",
+      "value": "One family tree. Everything else in this database carries a reference to one of these rows, and `is_public` on it is half of the rule that decides what an anonymous visitor may read."
+    },
+    {
+      "id": "b0f5ddd1-8f3e-4688-924d-88afd9a14d05",
+      "key": "stemma_c_disputed",
+      "language": "en-US",
+      "value": "Disputed"
+    },
+    {
+      "id": "b153d5d6-222c-4a4d-8346-71ba69380306",
+      "key": "stemma_note_name_surname",
+      "language": "en-US",
+      "value": "Family name. Left empty where a culture does not use one, rather than filled with a placeholder that will later be searched for and found."
+    },
+    {
+      "id": "b16d9782-369f-4b3c-a4b2-4987042556f8",
+      "key": "stemma_c_calculated",
+      "language": "en-US",
+      "value": "Calculated"
+    },
+    {
+      "id": "b1b210d0-76e7-4125-92c6-eec5f40fab98",
+      "key": "stemma_note_row_tree",
+      "language": "en-US",
+      "value": "The tree this row belongs to. Carried on every collection so the public filter is one hop — and the database checks it agrees with the rows this one points at."
+    },
+    {
+      "id": "b25125ff-38a9-4ef2-aec1-fe8e4c6fc639",
+      "key": "stemma_c_at_sea",
+      "language": "en-US",
+      "value": "At sea"
+    },
+    {
+      "id": "b445ce89-df51-40e2-9beb-6621ee6fc3ea",
+      "key": "stemma_note_person_sort_name",
+      "language": "en-US",
+      "value": "Surname first, particle handled per the tree's convention. The database maintains it; lists sort on it."
+    },
+    {
+      "id": "b8761557-42d0-414d-a9e4-079093add4d2",
+      "key": "stemma_c_primary",
+      "language": "en-US",
+      "value": "Primary"
+    },
+    {
+      "id": "b90a3b74-5aab-4215-96d2-fa7aedf25ae0",
+      "key": "stemma_c_servant_of",
+      "language": "en-US",
+      "value": "servant of"
+    },
+    {
+      "id": "ba2501bc-1aea-4df2-8569-90f34188aae7",
+      "key": "stemma_note_participant_detail",
+      "language": "en-US",
+      "value": "What the record said about them here — 'aged 12, scholar, born Kent'."
+    },
+    {
+      "id": "bbab763a-3a7a-4374-827a-2f52600e11b3",
+      "key": "stemma_c_direct",
+      "language": "en-US",
+      "value": "Direct"
+    },
+    {
+      "id": "bbaddc5f-daa8-49c6-a824-f4ea41f2b954",
+      "key": "stemma_note_date_qualifier",
+      "language": "en-US",
+      "value": "How the range below should be read. Between is one moment somewhere in the range; period is the whole range. Before and after leave one end open. Phrase means no range could be made of it."
+    },
+    {
+      "id": "bc2a9161-213f-4454-a813-ef1ff117c19e",
+      "key": "stemma_note_name_given",
+      "language": "en-US",
+      "value": "Forenames, in the order the source gives them."
+    },
+    {
+      "id": "bcf7e126-01a6-41ac-a139-636229abf7d3",
+      "key": "stemma_note_invitation_token",
+      "language": "en-US",
+      "value": "Generated by the database. The invitation link carries it."
+    },
+    {
+      "id": "bfaa09a8-9871-4185-9ab6-de5c46c16e42",
+      "key": "stemma_note_name_sort_order",
+      "language": "en-US",
+      "value": "Which name comes first. The lowest is the one shown for this person, so ordering the list is how a contributor chooses — rather than a separate primary flag that could contradict the order it sits beside."
+    },
+    {
+      "id": "c1404627-750a-48a3-a13e-a8247379234e",
+      "key": "stemma_note_role_phrase",
+      "language": "en-US",
+      "value": "For role 'other': the role in words."
+    },
+    {
+      "id": "c14a749f-46a2-41b4-ab34-3cc901d2158c",
+      "key": "stemma_c_about",
+      "language": "en-US",
+      "value": "About"
+    },
+    {
+      "id": "c1826e12-b7e7-4464-bc01-072903a86193",
+      "key": "stemma_note_parentage_child",
+      "language": "en-US",
+      "value": "The child in this edge."
+    },
+    {
+      "id": "c19499fe-4958-43ac-9503-3fecf1678ec6",
+      "key": "stemma_c_authored",
+      "language": "en-US",
+      "value": "Authored"
+    },
+    {
+      "id": "c1b67d02-ce58-4c93-abc1-21c256b7aeb3",
+      "key": "stemma_note_gedcom_tag",
+      "language": "en-US",
+      "value": "The GEDCOM 7 tag this exports as. Empty exports as EVEN with a TYPE."
+    },
+    {
+      "id": "c450e463-5382-4929-bb38-1ad56ad7bff5",
+      "key": "stemma_note_association_b",
+      "language": "en-US",
+      "value": "The other party."
+    },
+    {
+      "id": "c66dfa5f-14ba-4740-969c-2f5b0d91df31",
+      "key": "stemma_note_row_tree_optional",
+      "language": "en-US",
+      "value": "Empty means global: every tree sees this row. Set a tree to make it that tree's own."
+    },
+    {
+      "id": "c857117a-ed08-426e-964c-116ca6a3d167",
+      "key": "stemma_note_is_conclusion",
+      "language": "en-US",
+      "value": "Of several events of one type on one person, the one the tree stands behind. The chart shows this one; the person page shows all of them. At most one per type per subject."
+    },
+    {
+      "id": "c9a09360-5f8d-47eb-9663-f48d3d08f51e",
+      "key": "stemma_note_member_role",
+      "language": "en-US",
+      "value": "Owner administers membership. Editor changes anything. Contributor adds but does not delete. Viewer reads, including the living people an anonymous visitor cannot see."
+    },
+    {
+      "id": "c9af6eff-0c6d-40eb-ad2c-fda70c949a89",
+      "key": "stemma_c_islamic",
+      "language": "en-US",
+      "value": "Islamic (Hijri)"
+    },
+    {
+      "id": "ca916ef1-777b-4c20-9cc1-f7824ee0e715",
+      "key": "stemma_c_before",
+      "language": "en-US",
+      "value": "Before"
+    },
+    {
+      "id": "cb495f42-8cf5-4c07-9292-fdbe08b56a87",
+      "key": "stemma_c_quaker",
+      "language": "en-US",
+      "value": "Quaker"
+    },
+    {
+      "id": "cb8da306-c8fe-4f18-b8c8-cc64258c46ad",
+      "key": "stemma_note_subject_couple",
+      "language": "en-US",
+      "value": "Whose event this is, when it belongs to a union — a marriage, a divorce, a joint census entry."
+    },
+    {
+      "id": "cc07c0e5-09e5-4b4b-b780-8a82ec39e88f",
+      "key": "stemma_note_citations",
+      "language": "en-US",
+      "value": "The specific place in a source and what it says there. Carries the Genealogical Proof Standard's three questions: what kind of source, what kind of information, what kind of evidence."
+    },
+    {
+      "id": "d384362d-0c0a-47f3-9c17-8eba5e005cde",
+      "key": "stemma_c_conclusion",
+      "language": "en-US",
+      "value": "Conclusion"
+    },
+    {
+      "id": "d4737e9b-e5f9-4203-877d-003100885fec",
+      "key": "stemma_c_hamlet",
+      "language": "en-US",
+      "value": "Hamlet"
+    },
+    {
+      "id": "d5059977-6c26-44ee-afec-e4f44db529fc",
+      "key": "stemma_folder_media",
+      "language": "en-US",
+      "value": "Photographs, scans and recordings, with who is in them and what they are attached to. A media row naming a living person cannot be published, and a trigger rather than a policy is what enforces it."
+    },
+    {
+      "id": "d5f23aaf-713e-436b-90b3-13c17560b400",
+      "key": "stemma_c_photo",
+      "language": "en-US",
+      "value": "Photo"
+    },
+    {
+      "id": "d68c2553-3804-4702-8802-ffac8182aa82",
+      "key": "stemma_note_association_phrase",
+      "language": "en-US",
+      "value": "For type 'other': the relationship in words."
+    },
+    {
+      "id": "d86c7e81-401a-4250-bc06-e5c015da8d08",
+      "key": "stemma_note_particle_sorting",
+      "language": "en-US",
+      "value": "Whether 'van Gogh' sorts under G (ignore the particle — Netherlands) or under V (include it — Belgium, the English-speaking world)."
+    },
+    {
+      "id": "d8781aa1-e9ad-4b8c-abe5-b9b4379c3b45",
+      "key": "stemma_note_events",
+      "language": "en-US",
+      "value": "Where the facts live. Filed under exactly one subject — a person or a couple — with any number of other people through participants. Two events of one type on one person is how conflicting evidence is kept: both cited, one marked the conclusion."
+    },
+    {
+      "id": "d9451369-8e16-41b7-b18b-c01472efc340",
+      "key": "stemma_folder_tenancy",
+      "language": "en-US",
+      "value": "Who owns a tree and who may work on it. Membership is many-to-many — one person can belong to several trees at different levels — which is why it is a table rather than a column."
+    },
+    {
+      "id": "d9ae4853-9896-4303-b680-d2b320ca3edf",
+      "key": "stemma_c_sponsor",
+      "language": "en-US",
+      "value": "Sponsor"
+    },
+    {
+      "id": "d9cac772-0414-40c6-a6f0-5fdb0c4d709a",
+      "key": "stemma_note_edge_status",
+      "language": "en-US",
+      "value": "An edge is an assertion. Disputed keeps it on the chart with a mark; disproven keeps it on file and off the chart — the wrong answer stays, with the reason. Conclusion is the one the tree stands behind."
+    },
+    {
+      "id": "da0aee9c-bc0e-4215-848b-85ff19787668",
+      "key": "stemma_note_name_nickname",
+      "language": "en-US",
+      "value": "What they were actually called."
+    },
+    {
+      "id": "da3fe463-f149-4b53-bbef-34a7085b1c09",
+      "key": "stemma_note_places",
+      "language": "en-US",
+      "value": "A place as this tree knows it. Per tree, because a street address is private; the gazetteer ids are how two trees agree that Gdańsk is Gdańsk without sharing a row."
+    },
+    {
+      "id": "dbfb0915-d0be-46da-9501-fd8e85f0a7da",
+      "key": "stemma_c_between",
+      "language": "en-US",
+      "value": "Between"
+    },
+    {
+      "id": "dc7eb6b9-a61a-4f99-b373-2f309d499009",
+      "key": "stemma_c_asserted",
+      "language": "en-US",
+      "value": "Asserted"
+    },
+    {
+      "id": "dccddf2d-bdf0-4e3d-9afc-6d77565d99f1",
+      "key": "stemma_c_confidence_3",
+      "language": "en-US",
+      "value": "3 — direct and primary"
+    },
+    {
+      "id": "dccfd758-0bb8-4722-8b28-35e74aac29a6",
+      "key": "stemma_c_gedcom",
+      "language": "en-US",
+      "value": "Gedcom"
+    },
+    {
+      "id": "dd0aa738-e087-4960-abcb-6cee9d7f083c",
+      "key": "stemma_note_valid_to",
+      "language": "en-US",
+      "value": "When this name fell out of use. Empty means 'still current'."
+    },
+    {
+      "id": "dda6c5f4-512e-450e-9cf7-208cad04dc64",
+      "key": "stemma_note_precision",
+      "language": "en-US",
+      "value": "How much of the map this pin means: a country's centroid is not a street."
+    },
+    {
+      "id": "de408abf-d65f-4215-9a58-8bca34f2de6f",
+      "key": "stemma_note_valid_from",
+      "language": "en-US",
+      "value": "When this name came into use. Empty means 'as far back as known'."
+    },
+    {
+      "id": "df08b15d-4047-4b03-9869-80c5fd529c88",
+      "key": "stemma_note_person_is_living",
+      "language": "en-US",
+      "value": "Stored and maintained, never computed at read time: the public filter has to stay a flat comparison. Default on — a person nobody has assessed is withheld, not published. A death event switches it off."
+    },
+    {
+      "id": "df779bb3-39b5-4da7-8440-ce90ce2740fe",
+      "key": "stemma_c_other",
+      "language": "en-US",
+      "value": "Other"
+    },
+    {
+      "id": "df82ea97-9037-4126-974e-f323c4b6bc3e",
+      "key": "stemma_c_confidence_2",
+      "language": "en-US",
+      "value": "2 — secondary evidence"
+    },
+    {
+      "id": "df8d8457-ec09-40b2-acac-3b0832079467",
+      "key": "stemma_c_tenant_of",
+      "language": "en-US",
+      "value": "tenant of"
+    },
+    {
+      "id": "e09055c5-b11f-4aa5-a695-d257995dbde1",
+      "key": "stemma_note_licence",
+      "language": "en-US",
+      "value": "Under what terms this may be shown. Unknown is not permission."
+    },
+    {
+      "id": "e0b0ceef-bc65-4447-baf8-0e9d91af7860",
+      "key": "stemma_c_enslaved",
+      "language": "en-US",
+      "value": "Enslaved"
+    },
+    {
+      "id": "e19d5475-e010-44c0-86d7-64606cb112df",
+      "key": "stemma_note_wikidata_id",
+      "language": "en-US",
+      "value": "Wikidata Q-number."
+    },
+    {
+      "id": "e23f0838-ec83-472b-be90-75eff4f2a2cb",
+      "key": "stemma_note_media_links_collection",
+      "language": "en-US",
+      "value": "What a media item illustrates. A junction; edit from the media item."
+    },
+    {
+      "id": "e2e182f6-45a3-4685-901c-e408b28ae419",
+      "key": "stemma_note_association_type",
+      "language": "en-US",
+      "value": "Read as: person_a [type] person_b."
+    },
+    {
+      "id": "e31e6b0b-4997-4b82-9611-6ddbd26b023f",
+      "key": "stemma_c_original",
+      "language": "en-US",
+      "value": "Original"
+    },
+    {
+      "id": "e3723237-bd05-48cb-aee6-1312543d59fd",
+      "key": "stemma_c_employer",
+      "language": "en-US",
+      "value": "Employer"
+    },
+    {
+      "id": "e41a978c-20f7-4af5-bd26-928626712fec",
+      "key": "stemma_c_donor",
+      "language": "en-US",
+      "value": "Donor"
+    },
+    {
+      "id": "e4d4dbe5-5dcc-42ea-95a3-a2d8b5dca7ae",
+      "key": "stemma_c_derivative",
+      "language": "en-US",
+      "value": "Derivative"
+    },
+    {
+      "id": "e4f1c3dd-7c98-48a5-8441-bb16bfd0209d",
+      "key": "stemma_note_place_type",
+      "language": "en-US",
+      "value": "Ships and 'at sea' are real birthplaces."
+    },
+    {
+      "id": "e5f0946e-9528-4d0c-bfd4-6afe35fbc5de",
+      "key": "stemma_note_name_suffix",
+      "language": "en-US",
+      "value": "Jr, III, or a post-nominal."
+    },
+    {
+      "id": "e7b49d0e-452c-43d7-820f-19cc82555133",
+      "key": "stemma_c_after",
+      "language": "en-US",
+      "value": "After"
+    },
+    {
+      "id": "e8a044b5-6f35-4700-aed2-bebef4f0987c",
+      "key": "stemma_note_tree_is_listed",
+      "language": "en-US",
+      "value": "Whether a public tree appears in any index. Off is unlisted: reachable by URL, findable by nobody."
+    },
+    {
+      "id": "e8e0c787-890e-4ff9-9eaf-65be4b7d5e9b",
+      "key": "stemma_note_default_name_order",
+      "language": "en-US",
+      "value": "Whether names in this tree are given-first (Jan Kowalski) or surname-first (KOWALSKI Jan, 王 明). A name row can override it."
+    },
+    {
+      "id": "e91ac79d-a946-4225-9798-ecf73f3d2f93",
+      "key": "stemma_note_citation_links",
+      "language": "en-US",
+      "value": "What this citation supports."
+    },
+    {
+      "id": "e9f28c6b-add0-459b-8d5b-bdc8474bf2d2",
+      "key": "stemma_c_government",
+      "language": "en-US",
+      "value": "Government"
+    },
+    {
+      "id": "ea2ef79b-dfda-4506-a8e7-6cbeaae55668",
+      "key": "stemma_c_viewer",
+      "language": "en-US",
+      "value": "Viewer"
+    },
+    {
+      "id": "ea8b58f3-ac1a-4a84-9b7e-89c296906407",
+      "key": "stemma_note_tree_members",
+      "language": "en-US",
+      "value": "Who may work on a tree, and in what capacity. A person can belong to many trees and a tree has many members — a genuine many-to-many, not a column on the user."
+    },
+    {
+      "id": "ebbedf74-ce46-4a97-b798-674b16b67cf5",
+      "key": "stemma_note_tree_invitations",
+      "language": "en-US",
+      "value": "A membership that has not happened yet: somebody invited by email before they have an account."
+    },
+    {
+      "id": "ecba2487-faa6-4f91-9fe0-69238175ffcc",
+      "key": "stemma_note_event_type",
+      "language": "en-US",
+      "value": "What kind of event. Add a type to the list if the right one is missing."
+    },
+    {
+      "id": "eda97538-8c4f-4b2a-8e6a-ae653e9c569b",
+      "key": "stemma_c_adopted",
+      "language": "en-US",
+      "value": "Adopted"
+    },
+    {
+      "id": "ef6a69be-d4b5-4d50-be84-0a877cc3c796",
+      "key": "stemma_note_family_graph",
+      "language": "en-US",
+      "value": "Who this person is connected to, drawn from the parentage and couples edges. Read only — click a name to open them. Edit the family through Parentage and Couples, which are the source of truth this reads."
+    },
+    {
+      "id": "f0763d9d-a3c5-4bc8-b75d-313cb930503b",
+      "key": "stemma_c_include",
+      "language": "en-US",
+      "value": "Include"
+    },
+    {
+      "id": "f0a2c2d8-ce5e-4cf5-8d8a-241c16b8e2bc",
+      "key": "stemma_folder_graph",
+      "language": "en-US",
+      "value": "People and the edges between them. A family tree is a directed acyclic graph, not a tree: cousins marry, and the same ancestor legitimately occupies two positions of one chart. Nothing here stores a sibling edge — two people sharing a parent are siblings, and a stored one would go stale."
+    },
+    {
+      "id": "f314085c-a1b9-4bd7-872e-00dc2bea8f99",
+      "key": "stemma_c_state",
+      "language": "en-US",
+      "value": "State"
+    },
+    {
+      "id": "f4449eac-667c-4d0d-a9be-a1243d9c9dec",
+      "key": "stemma_note_event_type_code",
+      "language": "en-US",
+      "value": "A short machine key, unique within the tree (or globally for global rows): birth, census, occupation."
+    },
+    {
+      "id": "f4b837dc-48e4-4af0-8db0-05e90cbd53e9",
+      "key": "stemma_note_parentage_parent",
+      "language": "en-US",
+      "value": "The parent in this edge."
+    },
+    {
+      "id": "f50c1a75-d11c-4873-b75c-6026aa551dc9",
+      "key": "stemma_c_civil",
+      "language": "en-US",
+      "value": "Civil"
+    },
+    {
+      "id": "f5907b62-e939-4f80-9750-69017f745629",
+      "key": "stemma_c_public_domain",
+      "language": "en-US",
+      "value": "Public domain"
+    },
+    {
+      "id": "f6ec7639-9628-486e-a829-ef7dafc5aca8",
+      "key": "stemma_c_given_first",
+      "language": "en-US",
+      "value": "Given name first"
+    },
+    {
+      "id": "f7071b17-abec-4bb8-85ae-cf14923393c6",
+      "key": "stemma_note_tree_description",
+      "language": "en-US",
+      "value": "A paragraph for the public page, if the tree has one."
+    },
+    {
+      "id": "f717e78f-00de-4697-b875-6eae00b100ff",
+      "key": "stemma_note_person_biography",
+      "language": "en-US",
+      "value": "Prose fit to publish. Shown on the public page when the person is."
+    },
+    {
+      "id": "f726c0d3-ddfb-4eeb-8a9d-ed9b6e359ed1",
+      "key": "stemma_c_friend_of",
+      "language": "en-US",
+      "value": "friend of"
+    },
+    {
+      "id": "f8b1789d-31ed-4de0-9871-a94b45ba591b",
+      "key": "stemma_note_locator",
+      "language": "en-US",
+      "value": "Page, entry, folio, image number — whatever finds the exact spot again."
+    },
+    {
+      "id": "f8fdc0a7-5754-407e-b3c4-4e8a96072ceb",
+      "key": "stemma_note_is_restricted",
+      "language": "en-US",
+      "value": "Withheld from the public regardless of anything else — a wish, not a legal status. For the suicide, the illegitimacy, the adoption a family does not want seen. Also set by the embargo after death."
+    },
+    {
+      "id": "fa8aa56f-4e5c-47af-ae7a-111cbbeadd6d",
+      "key": "stemma_c_pending",
+      "language": "en-US",
+      "value": "Pending"
+    },
+    {
+      "id": "fb70da81-fc41-48b4-85bd-ff1150e793d5",
+      "key": "stemma_c_ignore",
+      "language": "en-US",
+      "value": "Ignore"
+    },
+    {
+      "id": "fe5db63a-0c08-4445-a0de-90d8a38acaf9",
+      "key": "stemma_note_parentage",
+      "language": "en-US",
+      "value": "One parent–child edge, with the nature of the link on it. This is why the schema is a graph and not mother_id/father_id: a child may have two birth parents and two adoptive ones on record, and all four are ordinary."
+    },
+    {
+      "id": "feb977a8-b180-4d23-98de-18bb49efd11d",
+      "key": "stemma_note_event_type_label",
+      "language": "en-US",
+      "value": "What the type is called on screen."
+    },
+    {
+      "id": "fed0705c-820f-44ce-8fc5-563aa96c3cf9",
+      "key": "stemma_note_edge_sort",
+      "language": "en-US",
+      "value": "Birth order among siblings when the dates are missing. Dates win when present."
+    },
+    {
+      "id": "fedaaed4-df8f-4b7b-9b58-65273c3f1be5",
+      "key": "stemma_note_parent_place",
+      "language": "en-US",
+      "value": "The place this sits in, as of now. Historical jurisdiction lives in the record's own words on each event."
+    },
+    {
+      "id": "ff0cf1cc-1cef-4d92-867c-6eef334d01a0",
+      "key": "stemma_c_settlement",
+      "language": "en-US",
+      "value": "Settlement"
+    },
+    {
+      "id": "ff48e622-a421-4396-8863-9d74e42d4fb0",
+      "key": "stemma_note_name_type_phrase",
+      "language": "en-US",
+      "value": "For type 'other': what kind of name this is, in words."
+    }
+  ]
+}

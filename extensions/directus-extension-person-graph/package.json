@@ -1,0 +1,49 @@
+{
+  "name": "directus-extension-person-graph",
+  "version": "1.0.0",
+  "description": "The immediate family of a person, on their own form. Renders parents, partners and children from the parentage and couples edges, with the pedigree symbols, and navigates on click.",
+  "private": true,
+  "license": "PolyForm-Strict-1.0.0",
+  "author": "Ahmad Khan <ahmad@khanahmad.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanahmad4527/stemma.git",
+    "directory": "extensions/directus-extension-person-graph"
+  },
+  "homepage": "https://github.com/khanahmad4527/stemma#the-person-graph",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-interface",
+    "genealogy",
+    "pedigree"
+  ],
+  "type": "module",
+  "icon": "family_history",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "directus:extension": {
+    "type": "interface",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^11.0.0 || ^12.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "13.1.1",
+    "@types/node": "22.20.3",
+    "typescript": "5.9.3",
+    "vue": "3.5.43",
+    "vue-tsc": "2.2.12"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

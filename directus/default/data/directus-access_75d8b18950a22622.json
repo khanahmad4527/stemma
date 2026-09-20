@@ -1,0 +1,27 @@
+{
+  "collection": "directus_access",
+  "primaryKey": "id",
+  "records": [
+    {
+      "id": "6af1b15d-6aca-4de4-943b-4cf0e75aacd2",
+      "policy": "ac20a4cd-2bce-4622-a56e-2e1361b78aff",
+      "role": "05ff30a0-dd1b-4249-9ca3-d72a71fd3080",
+      "sort": null,
+      "user": null
+    },
+    {
+      "id": "d9c1e0d5-48d7-4ac6-b551-b60504adebb1",
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "role": null,
+      "sort": 1,
+      "user": null
+    },
+    {
+      "id": "f26af065-80d5-44a1-ad4e-d05f7c9c9284",
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "role": "075bc6cc-c9ff-4531-9e8b-dbb3e2159fbb",
+      "sort": 1,
+      "user": null
+    }
+  ]
+}

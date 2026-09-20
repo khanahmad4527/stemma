@@ -1,0 +1,557 @@
+{
+  "collection": "tree_members",
+  "definition": {
+    "collection": "tree_members",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "tree_members",
+      "color": "#2A78D6",
+      "display_template": "{{user.first_name}} {{user.last_name}} — {{role}}",
+      "group": "stemma_tenancy",
+      "hidden": false,
+      "icon": "group",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_note_tree_members",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 2,
+      "sort_field": null,
+      "status": "active",
+      "translations": null,
+      "unarchive_value": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "tree_members"
+    }
+  },
+  "fields": [
+    {
+      "collection": "tree_members",
+      "field": "date_created",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 92,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "tree_members",
+      "field": "date_updated",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 94,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "tree_members",
+      "field": "id",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "id",
+        "group": "system",
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_system_id",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 91,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": "gen_random_uuid()",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": true,
+        "is_unique": true,
+        "max_length": null,
+        "name": "id",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "tree_members",
+      "field": "role",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "color": "#6644FF",
+              "text": "$t:stemma_c_owner",
+              "value": "owner"
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_editor",
+              "value": "editor"
+            },
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_contributor",
+              "value": "contributor"
+            },
+            {
+              "color": "#A2B5CD",
+              "text": "$t:stemma_c_viewer",
+              "value": "viewer"
+            }
+          ]
+        },
+        "field": "role",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_member_role",
+        "options": {
+          "choices": [
+            {
+              "color": "#6644FF",
+              "text": "$t:stemma_c_owner",
+              "value": "owner"
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_editor",
+              "value": "editor"
+            },
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_contributor",
+              "value": "contributor"
+            },
+            {
+              "color": "#A2B5CD",
+              "text": "$t:stemma_c_viewer",
+              "value": "viewer"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "viewer",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "role",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "tree_members",
+      "field": "system",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "system",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": "$t:stemma_note_system_group",
+        "options": {
+          "headerIcon": "manage_history",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 90,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "tree_members",
+      "field": "tree",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "field": "tree",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_row_tree",
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "tree",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "tree_members",
+      "field": "user",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "field": "user",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_users",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "tree_members",
+      "field": "user_created",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 93,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "tree_members",
+      "field": "user_updated",
+      "meta": {
+        "collection": "tree_members",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 95,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "tree_members"
+      },
+      "type": "uuid"
+    }
+  ],
+  "relations": [
+    {
+      "collection": "tree_members",
+      "field": "tree",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "tree_members",
+        "many_field": "tree",
+        "one_allowed_collections": null,
+        "one_collection": "trees",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "members",
+        "sort_field": null
+      },
+      "related_collection": "trees",
+      "schema": {
+        "column": "tree",
+        "constraint_name": "tree_members_tree_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "tree_members"
+      }
+    },
+    {
+      "collection": "tree_members",
+      "field": "user",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "tree_members",
+        "many_field": "user",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "directus_users",
+      "schema": {
+        "column": "user",
+        "constraint_name": "tree_members_user_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_users",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "tree_members"
+      }
+    }
+  ],
+  "systemFields": []
+}

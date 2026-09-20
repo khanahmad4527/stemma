@@ -1,0 +1,47 @@
+{
+  "name": "directus-extension-date-parser",
+  "version": "1.0.0",
+  "description": "Turns a genealogical date written the way a source writes it — abt 1850, bef 1900, bet 1852 and 1855, 24 Feb 1750/51 — into the four derived columns, without ever touching the verbatim original.",
+  "private": true,
+  "license": "PolyForm-Strict-1.0.0",
+  "author": "Ahmad Khan <ahmad@khanahmad.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanahmad4527/stemma.git",
+    "directory": "extensions/directus-extension-date-parser"
+  },
+  "homepage": "https://github.com/khanahmad4527/stemma#dates",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-hook",
+    "genealogy",
+    "gedcom"
+  ],
+  "type": "module",
+  "icon": "event",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "directus:extension": {
+    "type": "hook",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^11.0.0 || ^12.0.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "13.1.1",
+    "@types/node": "22.20.3",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

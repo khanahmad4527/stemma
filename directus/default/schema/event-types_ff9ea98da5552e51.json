@@ -1,0 +1,882 @@
+{
+  "collection": "event_types",
+  "definition": {
+    "collection": "event_types",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "event_types",
+      "color": "#2A78D6",
+      "display_template": "{{label}}",
+      "group": "stemma_events",
+      "hidden": false,
+      "icon": "category",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_note_event_types",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 20,
+      "sort_field": "sort",
+      "status": "active",
+      "translations": null,
+      "unarchive_value": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "event_types"
+    }
+  },
+  "fields": [
+    {
+      "collection": "event_types",
+      "field": "applies_to",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_person",
+              "value": "person"
+            },
+            {
+              "text": "$t:stemma_c_couple",
+              "value": "couple"
+            },
+            {
+              "text": "$t:stemma_c_either",
+              "value": "either"
+            }
+          ]
+        },
+        "field": "applies_to",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_applies_to",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_person",
+              "value": "person"
+            },
+            {
+              "text": "$t:stemma_c_couple",
+              "value": "couple"
+            },
+            {
+              "text": "$t:stemma_c_either",
+              "value": "either"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "person",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "applies_to",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_types",
+      "field": "category",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_vital",
+              "value": "vital"
+            },
+            {
+              "text": "$t:stemma_c_religious",
+              "value": "religious"
+            },
+            {
+              "text": "$t:stemma_c_civil",
+              "value": "civil"
+            },
+            {
+              "text": "$t:stemma_c_residence",
+              "value": "residence"
+            },
+            {
+              "text": "$t:stemma_c_occupation",
+              "value": "occupation"
+            },
+            {
+              "text": "$t:stemma_c_education",
+              "value": "education"
+            },
+            {
+              "text": "$t:stemma_c_military",
+              "value": "military"
+            },
+            {
+              "text": "$t:stemma_c_legal",
+              "value": "legal"
+            },
+            {
+              "text": "$t:stemma_c_property",
+              "value": "property"
+            },
+            {
+              "text": "$t:stemma_c_migration",
+              "value": "migration"
+            },
+            {
+              "text": "$t:stemma_c_attribute",
+              "value": "attribute"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "field": "category",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_vital",
+              "value": "vital"
+            },
+            {
+              "text": "$t:stemma_c_religious",
+              "value": "religious"
+            },
+            {
+              "text": "$t:stemma_c_civil",
+              "value": "civil"
+            },
+            {
+              "text": "$t:stemma_c_residence",
+              "value": "residence"
+            },
+            {
+              "text": "$t:stemma_c_occupation",
+              "value": "occupation"
+            },
+            {
+              "text": "$t:stemma_c_education",
+              "value": "education"
+            },
+            {
+              "text": "$t:stemma_c_military",
+              "value": "military"
+            },
+            {
+              "text": "$t:stemma_c_legal",
+              "value": "legal"
+            },
+            {
+              "text": "$t:stemma_c_property",
+              "value": "property"
+            },
+            {
+              "text": "$t:stemma_c_migration",
+              "value": "migration"
+            },
+            {
+              "text": "$t:stemma_c_attribute",
+              "value": "attribute"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "other",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "category",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_types",
+      "field": "code",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "code",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_event_type_code",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "code",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_types",
+      "field": "date_created",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 92,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "event_types",
+      "field": "date_updated",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 94,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "event_types",
+      "field": "ends_life",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": null,
+        "field": "ends_life",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "$t:stemma_note_ends_life",
+        "options": {
+          "label": "Ends life"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "boolean",
+        "default_value": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "ends_life",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "boolean"
+    },
+    {
+      "collection": "event_types",
+      "field": "gedcom_tag",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "gedcom_tag",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_gedcom_tag",
+        "options": {
+          "placeholder": "BIRT · DEAT · MARR · EVEN"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "gedcom_tag",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_types",
+      "field": "id",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "id",
+        "group": "system",
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_system_id",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 91,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": "gen_random_uuid()",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": true,
+        "is_unique": true,
+        "max_length": null,
+        "name": "id",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_types",
+      "field": "is_vital",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": null,
+        "field": "is_vital",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "$t:stemma_note_is_vital",
+        "options": {
+          "label": "Vital"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "boolean",
+        "default_value": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "is_vital",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "boolean"
+    },
+    {
+      "collection": "event_types",
+      "field": "label",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "label",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_event_type_label",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "label",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "event_types",
+      "field": "sort",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "sort",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 10,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "integer",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "sort",
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "table": "event_types"
+      },
+      "type": "integer"
+    },
+    {
+      "collection": "event_types",
+      "field": "system",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "system",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": "$t:stemma_note_system_group",
+        "options": {
+          "headerIcon": "manage_history",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 90,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "event_types",
+      "field": "tree",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "field": "tree",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_row_tree_optional",
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "tree",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_types",
+      "field": "user_created",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 93,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "event_types",
+      "field": "user_updated",
+      "meta": {
+        "collection": "event_types",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 95,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "event_types"
+      },
+      "type": "uuid"
+    }
+  ],
+  "relations": [
+    {
+      "collection": "event_types",
+      "field": "tree",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "event_types",
+        "many_field": "tree",
+        "one_allowed_collections": null,
+        "one_collection": "trees",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "trees",
+      "schema": {
+        "column": "tree",
+        "constraint_name": "event_types_tree_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "event_types"
+      }
+    }
+  ],
+  "systemFields": []
+}

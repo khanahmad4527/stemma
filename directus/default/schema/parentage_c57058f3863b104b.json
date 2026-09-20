@@ -1,0 +1,1131 @@
+{
+  "collection": "parentage",
+  "definition": {
+    "collection": "parentage",
+    "meta": {
+      "accountability": "all",
+      "archive_app_filter": true,
+      "archive_field": null,
+      "archive_value": null,
+      "autosave_revision_interval": null,
+      "collapse": "open",
+      "collection": "parentage",
+      "color": "#2A78D6",
+      "display_template": "{{parent.display_name}} → {{child.display_name}}",
+      "group": "stemma_graph",
+      "hidden": false,
+      "icon": "family_history",
+      "item_duplication_fields": null,
+      "note": "$t:stemma_note_parentage",
+      "preview_url": null,
+      "singleton": false,
+      "sort": 13,
+      "sort_field": null,
+      "status": "active",
+      "translations": null,
+      "unarchive_value": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "parentage"
+    }
+  },
+  "fields": [
+    {
+      "collection": "parentage",
+      "field": "child",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{display_name}}"
+        },
+        "field": "child",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_parentage_child",
+        "options": {
+          "template": "{{display_name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": true,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "child",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "confidence",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "color": "#A2B5CD",
+              "text": "$t:stemma_c_confidence_0",
+              "value": 0
+            },
+            {
+              "color": "#FFA439",
+              "text": "$t:stemma_c_confidence_1",
+              "value": 1
+            },
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_confidence_2",
+              "value": 2
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_confidence_3",
+              "value": 3
+            }
+          ]
+        },
+        "field": "confidence",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_confidence",
+        "options": {
+          "choices": [
+            {
+              "color": "#A2B5CD",
+              "text": "$t:stemma_c_confidence_0",
+              "value": 0
+            },
+            {
+              "color": "#FFA439",
+              "text": "$t:stemma_c_confidence_1",
+              "value": 1
+            },
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_confidence_2",
+              "value": 2
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_confidence_3",
+              "value": 3
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 13,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "integer",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "confidence",
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "table": "parentage"
+      },
+      "type": "integer"
+    },
+    {
+      "collection": "parentage",
+      "field": "date_created",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 92,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "parentage",
+      "field": "date_updated",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 94,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "date_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "timestamp"
+    },
+    {
+      "collection": "parentage",
+      "field": "divider_evidence",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "divider_evidence",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "icon": "gavel",
+          "title": "Evidence"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 11,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "parentage",
+      "field": "event",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{type.label}} · {{date_original}}"
+        },
+        "field": "event",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_edge_event",
+        "options": {
+          "template": "{{type.label}} · {{date_original}}"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 14,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "events",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "event",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "id",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "id",
+        "group": "system",
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_system_id",
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 91,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": "gen_random_uuid()",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": true,
+        "is_unique": true,
+        "max_length": null,
+        "name": "id",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "is_restricted",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": null,
+        "field": "is_restricted",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "$t:stemma_note_is_restricted",
+        "options": {
+          "label": "Restricted"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 15,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "boolean",
+        "default_value": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "is_restricted",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "boolean"
+    },
+    {
+      "collection": "parentage",
+      "field": "lineage",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_birth",
+              "value": "birth"
+            },
+            {
+              "text": "$t:stemma_c_adoptive",
+              "value": "adoptive"
+            },
+            {
+              "text": "$t:stemma_c_step",
+              "value": "step"
+            },
+            {
+              "text": "$t:stemma_c_foster",
+              "value": "foster"
+            },
+            {
+              "text": "$t:stemma_c_guardian",
+              "value": "guardian"
+            },
+            {
+              "text": "$t:stemma_c_donor",
+              "value": "donor"
+            },
+            {
+              "text": "$t:stemma_c_surrogate",
+              "value": "surrogate"
+            },
+            {
+              "text": "$t:stemma_c_sealing",
+              "value": "sealing"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "field": "lineage",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_parentage_lineage",
+        "options": {
+          "choices": [
+            {
+              "text": "$t:stemma_c_birth",
+              "value": "birth"
+            },
+            {
+              "text": "$t:stemma_c_adoptive",
+              "value": "adoptive"
+            },
+            {
+              "text": "$t:stemma_c_step",
+              "value": "step"
+            },
+            {
+              "text": "$t:stemma_c_foster",
+              "value": "foster"
+            },
+            {
+              "text": "$t:stemma_c_guardian",
+              "value": "guardian"
+            },
+            {
+              "text": "$t:stemma_c_donor",
+              "value": "donor"
+            },
+            {
+              "text": "$t:stemma_c_surrogate",
+              "value": "surrogate"
+            },
+            {
+              "text": "$t:stemma_c_sealing",
+              "value": "sealing"
+            },
+            {
+              "text": "$t:stemma_c_other",
+              "value": "other"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "birth",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "lineage",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "parentage",
+      "field": "lineage_phrase",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "lineage_phrase",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_lineage_phrase",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 10,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "lineage_phrase",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "parentage",
+      "field": "notes",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "format": true
+        },
+        "field": "notes",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "$t:stemma_note_private_notes",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 17,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "data_type": "text",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "notes",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "text"
+    },
+    {
+      "collection": "parentage",
+      "field": "parent",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{display_name}}"
+        },
+        "field": "parent",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_parentage_parent",
+        "options": {
+          "template": "{{display_name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": true,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "parent",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "sort",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": null,
+        "field": "sort",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "$t:stemma_note_edge_sort",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 16,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "integer",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "sort",
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "table": "parentage"
+      },
+      "type": "integer"
+    },
+    {
+      "collection": "parentage",
+      "field": "status",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_asserted",
+              "value": "asserted"
+            },
+            {
+              "color": "#FFA439",
+              "text": "$t:stemma_c_disputed",
+              "value": "disputed"
+            },
+            {
+              "color": "#E35169",
+              "text": "$t:stemma_c_disproven",
+              "value": "disproven"
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_conclusion",
+              "value": "conclusion"
+            }
+          ]
+        },
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": "$t:stemma_note_edge_status",
+        "options": {
+          "choices": [
+            {
+              "color": "#3399FF",
+              "text": "$t:stemma_c_asserted",
+              "value": "asserted"
+            },
+            {
+              "color": "#FFA439",
+              "text": "$t:stemma_c_disputed",
+              "value": "disputed"
+            },
+            {
+              "color": "#E35169",
+              "text": "$t:stemma_c_disproven",
+              "value": "disproven"
+            },
+            {
+              "color": "#2ECDA7",
+              "text": "$t:stemma_c_conclusion",
+              "value": "conclusion"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 12,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "character varying",
+        "default_value": "asserted",
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": 255,
+        "name": "status",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "string"
+    },
+    {
+      "collection": "parentage",
+      "field": "system",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "system",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": "$t:stemma_note_system_group",
+        "options": {
+          "headerIcon": "manage_history",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 90,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "type": "alias"
+    },
+    {
+      "collection": "parentage",
+      "field": "tree",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "field": "tree",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "$t:stemma_note_row_tree",
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": false,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "tree",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "user_created",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_created",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 93,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_created",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    },
+    {
+      "collection": "parentage",
+      "field": "user_updated",
+      "meta": {
+        "collection": "parentage",
+        "conditions": null,
+        "display": "user",
+        "display_options": {
+          "circle": true,
+          "display": "name"
+        },
+        "field": "user_updated",
+        "group": "system",
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 95,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "data_type": "uuid",
+        "default_value": null,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "is_generated": false,
+        "is_indexed": false,
+        "is_nullable": true,
+        "is_primary_key": false,
+        "is_unique": false,
+        "max_length": null,
+        "name": "user_updated",
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "table": "parentage"
+      },
+      "type": "uuid"
+    }
+  ],
+  "relations": [
+    {
+      "collection": "parentage",
+      "field": "child",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "parentage",
+        "many_field": "child",
+        "one_allowed_collections": null,
+        "one_collection": "persons",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "parents",
+        "sort_field": null
+      },
+      "related_collection": "persons",
+      "schema": {
+        "column": "child",
+        "constraint_name": "parentage_child_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "parentage"
+      }
+    },
+    {
+      "collection": "parentage",
+      "field": "event",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "parentage",
+        "many_field": "event",
+        "one_allowed_collections": null,
+        "one_collection": "events",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "events",
+      "schema": {
+        "column": "event",
+        "constraint_name": "parentage_event_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "events",
+        "on_delete": "SET NULL",
+        "on_update": "NO ACTION",
+        "table": "parentage"
+      }
+    },
+    {
+      "collection": "parentage",
+      "field": "parent",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "parentage",
+        "many_field": "parent",
+        "one_allowed_collections": null,
+        "one_collection": "persons",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "children",
+        "sort_field": null
+      },
+      "related_collection": "persons",
+      "schema": {
+        "column": "parent",
+        "constraint_name": "parentage_parent_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "persons",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "parentage"
+      }
+    },
+    {
+      "collection": "parentage",
+      "field": "tree",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "parentage",
+        "many_field": "tree",
+        "one_allowed_collections": null,
+        "one_collection": "trees",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "related_collection": "trees",
+      "schema": {
+        "column": "tree",
+        "constraint_name": "parentage_tree_foreign",
+        "foreign_key_column": "id",
+        "foreign_key_table": "trees",
+        "on_delete": "CASCADE",
+        "on_update": "NO ACTION",
+        "table": "parentage"
+      }
+    }
+  ],
+  "systemFields": []
+}

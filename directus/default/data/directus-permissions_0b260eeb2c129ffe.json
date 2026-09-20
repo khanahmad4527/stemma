@@ -1,0 +1,2938 @@
+{
+  "collection": "directus_permissions",
+  "primaryKey": "id",
+  "records": [
+    {
+      "action": "read",
+      "collection": "trees",
+      "fields": [
+        "id",
+        "name",
+        "slug",
+        "description",
+        "is_public",
+        "is_listed",
+        "home_person",
+        "default_name_order",
+        "particle_sorting",
+        "persons"
+      ],
+      "id": 310,
+      "permissions": {
+        "is_public": {
+          "_eq": true
+        }
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "persons",
+      "fields": [
+        "id",
+        "tree",
+        "display_name",
+        "sort_name",
+        "public_id",
+        "sex_recorded",
+        "is_living",
+        "biography",
+        "multiple_birth",
+        "names",
+        "parents",
+        "children",
+        "events",
+        "participations"
+      ],
+      "id": 311,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_living": {
+              "_eq": false
+            },
+            "is_restricted": {
+              "_eq": false
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "person_names",
+      "fields": [
+        "id",
+        "tree",
+        "person",
+        "type",
+        "type_phrase",
+        "prefix",
+        "given",
+        "particle",
+        "surname",
+        "patronymic",
+        "suffix",
+        "nickname",
+        "script_original",
+        "lang",
+        "name_order",
+        "parts",
+        "sort_order",
+        "event",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 312,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "person": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "parentage",
+      "fields": [
+        "id",
+        "tree",
+        "parent",
+        "child",
+        "lineage",
+        "lineage_phrase",
+        "status",
+        "confidence",
+        "event",
+        "is_restricted",
+        "sort",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 313,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_restricted": {
+              "_eq": false
+            }
+          },
+          {
+            "parent": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "child": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "status": {
+              "_neq": "disproven"
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "couples",
+      "fields": [
+        "id",
+        "tree",
+        "person_a",
+        "person_b",
+        "sort",
+        "is_restricted",
+        "events",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 314,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_restricted": {
+              "_eq": false
+            }
+          },
+          {
+            "person_a": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "person_b": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "associations",
+      "fields": [
+        "id",
+        "tree",
+        "person_a",
+        "type",
+        "person_b",
+        "type_phrase",
+        "date_original",
+        "date_qualifier",
+        "date_earliest",
+        "date_latest",
+        "date_calendar",
+        "is_restricted",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 315,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_restricted": {
+              "_eq": false
+            }
+          },
+          {
+            "person_a": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "person_b": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "event_types",
+      "fields": [
+        "*"
+      ],
+      "id": 316,
+      "permissions": {
+        "_or": [
+          {
+            "tree": {
+              "_null": true
+            }
+          },
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "events",
+      "fields": [
+        "id",
+        "tree",
+        "type",
+        "subject_person",
+        "subject_couple",
+        "value",
+        "date_original",
+        "date_qualifier",
+        "date_earliest",
+        "date_latest",
+        "date_calendar",
+        "date_time",
+        "age_recorded",
+        "place",
+        "place_original",
+        "is_conclusion",
+        "confidence",
+        "is_restricted",
+        "has_living_participant",
+        "sort",
+        "description",
+        "participants",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 317,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_restricted": {
+              "_eq": false
+            }
+          },
+          {
+            "has_living_participant": {
+              "_eq": false
+            }
+          },
+          {
+            "_or": [
+              {
+                "subject_person": {
+                  "is_living": {
+                    "_eq": false
+                  },
+                  "is_restricted": {
+                    "_eq": false
+                  }
+                }
+              },
+              {
+                "subject_couple": {
+                  "person_a": {
+                    "is_living": {
+                      "_eq": false
+                    },
+                    "is_restricted": {
+                      "_eq": false
+                    }
+                  },
+                  "person_b": {
+                    "is_living": {
+                      "_eq": false
+                    },
+                    "is_restricted": {
+                      "_eq": false
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "event_participants",
+      "fields": [
+        "id",
+        "tree",
+        "event",
+        "person",
+        "role",
+        "role_phrase",
+        "detail",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 318,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "person": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "event": {
+              "has_living_participant": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "places",
+      "fields": [
+        "id",
+        "tree",
+        "name",
+        "type",
+        "parent_place",
+        "lat",
+        "lng",
+        "precision",
+        "geonames_id",
+        "wikidata_id",
+        "gov_id",
+        "has_public_reference",
+        "names",
+        "children",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 319,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "has_public_reference": {
+              "_eq": true
+            }
+          },
+          {
+            "type": {
+              "_neq": "address"
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "place_names",
+      "fields": [
+        "id",
+        "tree",
+        "place",
+        "name",
+        "lang",
+        "valid_from",
+        "valid_to",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 320,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "place": {
+              "has_public_reference": {
+                "_eq": true
+              },
+              "type": {
+                "_neq": "address"
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "repositories",
+      "fields": [
+        "id",
+        "tree",
+        "name",
+        "type",
+        "address",
+        "url",
+        "sources",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 321,
+      "permissions": {
+        "tree": {
+          "is_public": {
+            "_eq": true
+          }
+        }
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "sources",
+      "fields": [
+        "id",
+        "tree",
+        "title",
+        "author",
+        "publication",
+        "type",
+        "repository",
+        "url",
+        "citations",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 322,
+      "permissions": {
+        "tree": {
+          "is_public": {
+            "_eq": true
+          }
+        }
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "citations",
+      "fields": [
+        "id",
+        "tree",
+        "source",
+        "locator",
+        "url",
+        "date_accessed",
+        "information",
+        "evidence",
+        "confidence",
+        "transcription",
+        "citation_text",
+        "links",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 323,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "links": {
+              "is_public_ok": {
+                "_eq": true
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "citation_links",
+      "fields": [
+        "*"
+      ],
+      "id": 324,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "is_public_ok": {
+              "_eq": true
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media",
+      "fields": [
+        "id",
+        "tree",
+        "file",
+        "kind",
+        "caption",
+        "date_original",
+        "date_qualifier",
+        "date_earliest",
+        "date_latest",
+        "date_calendar",
+        "copyright_holder",
+        "licence",
+        "publishable",
+        "is_restricted",
+        "transcript",
+        "subjects",
+        "links",
+        "date_created",
+        "user_created",
+        "date_updated",
+        "user_updated"
+      ],
+      "id": 325,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "publishable": {
+              "_eq": true
+            }
+          },
+          {
+            "is_restricted": {
+              "_eq": false
+            }
+          },
+          {
+            "file": {
+              "is_public_ok": {
+                "_eq": true
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media_subjects",
+      "fields": [
+        "*"
+      ],
+      "id": 326,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "person": {
+              "is_living": {
+                "_eq": false
+              },
+              "is_restricted": {
+                "_eq": false
+              }
+            }
+          },
+          {
+            "media": {
+              "publishable": {
+                "_eq": true
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media_links",
+      "fields": [
+        "*"
+      ],
+      "id": 327,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "is_public": {
+                "_eq": true
+              }
+            }
+          },
+          {
+            "media": {
+              "file": {
+                "is_public_ok": {
+                  "_eq": true
+                }
+              },
+              "publishable": {
+                "_eq": true
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "directus_files",
+      "fields": [
+        "id",
+        "title",
+        "type",
+        "width",
+        "height",
+        "filesize",
+        "tree",
+        "is_public_ok"
+      ],
+      "id": 328,
+      "permissions": {
+        "_or": [
+          {
+            "_and": [
+              {
+                "tree": {
+                  "is_public": {
+                    "_eq": true
+                  }
+                }
+              },
+              {
+                "is_public_ok": {
+                  "_eq": true
+                }
+              }
+            ]
+          },
+          {
+            "folder": {
+              "name": {
+                "_eq": "Brand"
+              }
+            }
+          }
+        ]
+      },
+      "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "trees",
+      "fields": [
+        "*"
+      ],
+      "id": 329,
+      "permissions": {
+        "members": {
+          "user": {
+            "_eq": "$CURRENT_USER"
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "trees",
+      "fields": [
+        "*"
+      ],
+      "id": 330,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": {
+        "owner": "$CURRENT_USER"
+      },
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "trees",
+      "fields": [
+        "*"
+      ],
+      "id": 331,
+      "permissions": {
+        "members": {
+          "_and": [
+            {
+              "user": {
+                "_eq": "$CURRENT_USER"
+              }
+            },
+            {
+              "role": {
+                "_in": [
+                  "owner",
+                  "editor"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "trees",
+      "fields": [
+        "*"
+      ],
+      "id": 332,
+      "permissions": {
+        "members": {
+          "_and": [
+            {
+              "user": {
+                "_eq": "$CURRENT_USER"
+              }
+            },
+            {
+              "role": {
+                "_in": [
+                  "owner"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "tree_members",
+      "fields": [
+        "*"
+      ],
+      "id": 333,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "tree_members",
+      "fields": [
+        "*"
+      ],
+      "id": 334,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "tree_members",
+      "fields": [
+        "*"
+      ],
+      "id": 335,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "tree_members",
+      "fields": [
+        "*"
+      ],
+      "id": 336,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "tree_invitations",
+      "fields": [
+        "*"
+      ],
+      "id": 337,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "tree_invitations",
+      "fields": [
+        "*"
+      ],
+      "id": 338,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "tree_invitations",
+      "fields": [
+        "*"
+      ],
+      "id": 339,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "tree_invitations",
+      "fields": [
+        "*"
+      ],
+      "id": 340,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "event_types",
+      "fields": [
+        "*"
+      ],
+      "id": 341,
+      "permissions": {
+        "_or": [
+          {
+            "tree": {
+              "_null": true
+            }
+          },
+          {
+            "tree": {
+              "members": {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "event_types",
+      "fields": [
+        "*"
+      ],
+      "id": 342,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {
+        "_and": [
+          {
+            "tree": {
+              "_submitted": true
+            }
+          },
+          {
+            "tree": {
+              "_nnull": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "action": "update",
+      "collection": "event_types",
+      "fields": [
+        "*"
+      ],
+      "id": 343,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "_nnull": true
+            }
+          },
+          {
+            "tree": {
+              "members": {
+                "_and": [
+                  {
+                    "user": {
+                      "_eq": "$CURRENT_USER"
+                    }
+                  },
+                  {
+                    "role": {
+                      "_in": [
+                        "owner",
+                        "editor"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "event_types",
+      "fields": [
+        "*"
+      ],
+      "id": 344,
+      "permissions": {
+        "_and": [
+          {
+            "tree": {
+              "_nnull": true
+            }
+          },
+          {
+            "tree": {
+              "members": {
+                "_and": [
+                  {
+                    "user": {
+                      "_eq": "$CURRENT_USER"
+                    }
+                  },
+                  {
+                    "role": {
+                      "_in": [
+                        "owner",
+                        "editor"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "persons",
+      "fields": [
+        "*"
+      ],
+      "id": 345,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "persons",
+      "fields": [
+        "*"
+      ],
+      "id": 346,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "persons",
+      "fields": [
+        "*"
+      ],
+      "id": 347,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "persons",
+      "fields": [
+        "*"
+      ],
+      "id": 348,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "person_names",
+      "fields": [
+        "*"
+      ],
+      "id": 349,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "person_names",
+      "fields": [
+        "*"
+      ],
+      "id": 350,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "person_names",
+      "fields": [
+        "*"
+      ],
+      "id": 351,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "person_names",
+      "fields": [
+        "*"
+      ],
+      "id": 352,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "couples",
+      "fields": [
+        "*"
+      ],
+      "id": 353,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "couples",
+      "fields": [
+        "*"
+      ],
+      "id": 354,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "couples",
+      "fields": [
+        "*"
+      ],
+      "id": 355,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "couples",
+      "fields": [
+        "*"
+      ],
+      "id": 356,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "parentage",
+      "fields": [
+        "*"
+      ],
+      "id": 357,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "parentage",
+      "fields": [
+        "*"
+      ],
+      "id": 358,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "parentage",
+      "fields": [
+        "*"
+      ],
+      "id": 359,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "parentage",
+      "fields": [
+        "*"
+      ],
+      "id": 360,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "associations",
+      "fields": [
+        "*"
+      ],
+      "id": 361,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "associations",
+      "fields": [
+        "*"
+      ],
+      "id": 362,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "associations",
+      "fields": [
+        "*"
+      ],
+      "id": 363,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "associations",
+      "fields": [
+        "*"
+      ],
+      "id": 364,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "events",
+      "fields": [
+        "*"
+      ],
+      "id": 365,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "events",
+      "fields": [
+        "*"
+      ],
+      "id": 366,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "events",
+      "fields": [
+        "*"
+      ],
+      "id": 367,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "events",
+      "fields": [
+        "*"
+      ],
+      "id": 368,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "event_participants",
+      "fields": [
+        "*"
+      ],
+      "id": 369,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "event_participants",
+      "fields": [
+        "*"
+      ],
+      "id": 370,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "event_participants",
+      "fields": [
+        "*"
+      ],
+      "id": 371,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "event_participants",
+      "fields": [
+        "*"
+      ],
+      "id": 372,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "places",
+      "fields": [
+        "*"
+      ],
+      "id": 373,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "places",
+      "fields": [
+        "*"
+      ],
+      "id": 374,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "places",
+      "fields": [
+        "*"
+      ],
+      "id": 375,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "places",
+      "fields": [
+        "*"
+      ],
+      "id": 376,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "place_names",
+      "fields": [
+        "*"
+      ],
+      "id": 377,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "place_names",
+      "fields": [
+        "*"
+      ],
+      "id": 378,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "place_names",
+      "fields": [
+        "*"
+      ],
+      "id": 379,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "place_names",
+      "fields": [
+        "*"
+      ],
+      "id": 380,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "repositories",
+      "fields": [
+        "*"
+      ],
+      "id": 381,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "repositories",
+      "fields": [
+        "*"
+      ],
+      "id": 382,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "repositories",
+      "fields": [
+        "*"
+      ],
+      "id": 383,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "repositories",
+      "fields": [
+        "*"
+      ],
+      "id": 384,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "sources",
+      "fields": [
+        "*"
+      ],
+      "id": 385,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "sources",
+      "fields": [
+        "*"
+      ],
+      "id": 386,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "sources",
+      "fields": [
+        "*"
+      ],
+      "id": 387,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "sources",
+      "fields": [
+        "*"
+      ],
+      "id": 388,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "citations",
+      "fields": [
+        "*"
+      ],
+      "id": 389,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "citations",
+      "fields": [
+        "*"
+      ],
+      "id": 390,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "citations",
+      "fields": [
+        "*"
+      ],
+      "id": 391,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "citations",
+      "fields": [
+        "*"
+      ],
+      "id": 392,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "citation_links",
+      "fields": [
+        "*"
+      ],
+      "id": 393,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "citation_links",
+      "fields": [
+        "*"
+      ],
+      "id": 394,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "citation_links",
+      "fields": [
+        "*"
+      ],
+      "id": 395,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "citation_links",
+      "fields": [
+        "*"
+      ],
+      "id": 396,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media",
+      "fields": [
+        "*"
+      ],
+      "id": 397,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "media",
+      "fields": [
+        "*"
+      ],
+      "id": 398,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "media",
+      "fields": [
+        "*"
+      ],
+      "id": 399,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "media",
+      "fields": [
+        "*"
+      ],
+      "id": 400,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media_subjects",
+      "fields": [
+        "*"
+      ],
+      "id": 401,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "media_subjects",
+      "fields": [
+        "*"
+      ],
+      "id": 402,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "media_subjects",
+      "fields": [
+        "*"
+      ],
+      "id": 403,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "media_subjects",
+      "fields": [
+        "*"
+      ],
+      "id": 404,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "media_links",
+      "fields": [
+        "*"
+      ],
+      "id": 405,
+      "permissions": {
+        "tree": {
+          "members": {
+            "user": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "media_links",
+      "fields": [
+        "*"
+      ],
+      "id": 406,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "media_links",
+      "fields": [
+        "*"
+      ],
+      "id": 407,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "delete",
+      "collection": "media_links",
+      "fields": [
+        "*"
+      ],
+      "id": 408,
+      "permissions": {
+        "tree": {
+          "members": {
+            "_and": [
+              {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              },
+              {
+                "role": {
+                  "_in": [
+                    "owner",
+                    "editor"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "directus_files",
+      "fields": [
+        "*"
+      ],
+      "id": 409,
+      "permissions": {
+        "_or": [
+          {
+            "tree": {
+              "members": {
+                "user": {
+                  "_eq": "$CURRENT_USER"
+                }
+              }
+            }
+          },
+          {
+            "uploaded_by": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        ]
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "create",
+      "collection": "directus_files",
+      "fields": [
+        "*"
+      ],
+      "id": 410,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "update",
+      "collection": "directus_files",
+      "fields": [
+        "title",
+        "description",
+        "tags",
+        "folder"
+      ],
+      "id": 411,
+      "permissions": {
+        "_or": [
+          {
+            "tree": {
+              "members": {
+                "_and": [
+                  {
+                    "user": {
+                      "_eq": "$CURRENT_USER"
+                    }
+                  },
+                  {
+                    "role": {
+                      "_in": [
+                        "owner",
+                        "editor"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "uploaded_by": {
+              "_eq": "$CURRENT_USER"
+            }
+          }
+        ]
+      },
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    },
+    {
+      "action": "read",
+      "collection": "directus_folders",
+      "fields": [
+        "*"
+      ],
+      "id": 412,
+      "permissions": {},
+      "policy": "da6f1c69-f7ee-41e2-b823-2196b56d18ae",
+      "presets": null,
+      "validation": {}
+    }
+  ]
+}
