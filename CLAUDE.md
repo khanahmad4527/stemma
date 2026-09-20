@@ -597,7 +597,17 @@ impossible. Taking `hidden: true` off `timestamps()` reached a fresh instance an
 left every existing one with the audit columns still hidden, inside the new group,
 so the group opened onto nothing. `OWNED_META` now names the keys the authoring
 layer controls and sends their off-value when the declaration omits them.
-`special` and `sort` are deliberately not on that list. The same rule bit
+`special` is deliberately not on that list.
+
+**And the array owns the field order.** `sort` was excluded from `OWNED_META`
+at first because Directus assigns it at creation — which it does, in the order
+fields were *added over time*, not the order they are declared in. The two
+drifted: `persons` declares the custom graph interface immediately under its
+"Graph" divider and the instance had it at sort 28, below the portrait, with
+the divider introducing two plain o2m lists instead. The array in `authoring/`
+is the designed reading order of the form, so it sets `sort` from its own
+index. An explicit `meta.sort` still wins, which is how the collapsed system
+group pins itself to 90 and stays last however many fields appear above it. The same rule bit
 `brand.ts`: uploading-once-by-title meant an edited SVG could never reach an
 instance that already had the old bytes, and the file cannot be deleted because
 `directus_settings` has a foreign key onto it — so it compares the bytes and

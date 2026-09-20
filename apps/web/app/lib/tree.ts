@@ -346,6 +346,32 @@ export function layoutFan(
 
 export const MEDALLION = 58;
 
+/**
+ * The horizontal slot each medallion gets, and why it is not the
+ * medallion's own width.
+ *
+ * The name is drawn under the portrait, centred, and a name is much
+ * wider than a 58px disc — "Susannah Fennimore" is about 120px at 13px.
+ * Spacing siblings by the disc alone ran their labels into each other,
+ * so a couple read as "Albert AshcombElizabeth Callow". The slot is the
+ * label's width, not the picture's.
+ *
+ * `CANOPY_LABEL` is the backstop for the name that is longer still: it
+ * ellipsizes at render time, and the full name stays in the node's
+ * `aria-label` and in the person panel, so nothing is lost — only
+ * shortened where it would otherwise collide.
+ */
+export const CANOPY_SLOT = 148;
+export const CANOPY_LABEL = 21;
+
+/** Shorten to fit the slot, on a word boundary where one is close enough. */
+export function fitLabel(name: string, max = CANOPY_LABEL): string {
+  if (name.length <= max) return name;
+  const cut = name.slice(0, max - 1);
+  const space = cut.lastIndexOf(" ");
+  return `${(space > max - 7 ? cut.slice(0, space) : cut).trimEnd()}\u2026`;
+}
+
 export type CanopyNode = LaidOut & {
   x: number; y: number; r: number;
   /** Which line from the root this hangs off: 0,1,2 tinted, -1 neutral. */
@@ -377,7 +403,7 @@ export function layoutCanopy(
   if (!walked) return { nodes: [], branches: [], trunk: "", width: 0, height: 0 };
 
   const h = hierarchy<Walked>(walked, (d) => d.kids);
-  d3tree<Walked>().nodeSize([MEDALLION + 46, 1])(h as HierarchyNode<Walked>);
+  d3tree<Walked>().nodeSize([CANOPY_SLOT, 1])(h as HierarchyNode<Walked>);
 
   // Rings open out as they rise. Even spacing reads as a flow chart.
   const deepest = Math.max(...h.descendants().map((n) => n.depth), 1);

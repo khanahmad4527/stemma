@@ -53,7 +53,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 23,
+        "sort": 18,
         "special": [
           "o2m"
         ],
@@ -180,7 +180,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 6,
+        "sort": 5,
         "special": [
           "alias",
           "no-data"
@@ -212,7 +212,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 10,
+        "sort": 9,
         "special": [
           "alias",
           "no-data"
@@ -244,7 +244,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 17,
+        "sort": 16,
         "special": [
           "alias",
           "no-data"
@@ -276,7 +276,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 14,
+        "sort": 13,
         "special": [
           "alias",
           "no-data"
@@ -305,7 +305,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 11,
+        "sort": 10,
         "special": null,
         "translations": null,
         "validation": null,
@@ -351,7 +351,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 13,
+        "sort": 12,
         "special": null,
         "translations": null,
         "validation": null,
@@ -395,7 +395,7 @@
         "readonly": true,
         "required": false,
         "searchable": true,
-        "sort": 15,
+        "sort": 14,
         "special": null,
         "translations": null,
         "validation": null,
@@ -487,7 +487,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 7,
+        "sort": 6,
         "special": null,
         "translations": null,
         "validation": null,
@@ -531,7 +531,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 8,
+        "sort": 7,
         "special": null,
         "translations": null,
         "validation": null,
@@ -575,7 +575,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 3,
+        "sort": 2,
         "special": null,
         "translations": null,
         "validation": null,
@@ -624,7 +624,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 18,
+        "sort": 17,
         "special": [
           "o2m"
         ],
@@ -654,7 +654,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 16,
+        "sort": 15,
         "special": null,
         "translations": null,
         "validation": null,
@@ -702,7 +702,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 5,
+        "sort": 4,
         "special": [
           "m2o"
         ],
@@ -794,7 +794,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 9,
+        "sort": 8,
         "special": null,
         "translations": null,
         "validation": null,
@@ -875,7 +875,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 2,
+        "sort": 1,
         "special": [
           "m2o"
         ],
@@ -1111,7 +1111,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 4,
+        "sort": 3,
         "special": null,
         "translations": null,
         "validation": null,
@@ -1259,7 +1259,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 12,
+        "sort": 11,
         "special": null,
         "translations": null,
         "validation": null,

@@ -58,6 +58,26 @@ async function exists(path: string): Promise<boolean> {
  * deliberately not on the list: `special` says what a column *is*, and
  * `sort` is assigned by Directus on creation and would be lost.
  */
+/**
+ * Where a field sits on the form.
+ *
+ * `sort` was left out of `OWNED_META` at first on the grounds that
+ * Directus assigns it at creation. It does — in creation order, which is
+ * the order fields were *added over time*, not the order they are
+ * declared in. So the two drifted: `persons` declares the custom graph
+ * interface immediately under its "Graph" divider, and the instance had
+ * it at sort 28, below the portrait, with the divider introducing the
+ * two plain lists instead.
+ *
+ * The array in `authoring/` is the designed reading order of the form —
+ * that is most of what those files are for — so it owns `sort` too. An
+ * explicit `meta.sort` still wins, which is how the collapsed system
+ * group pins itself to 90 and stays last however many fields appear
+ * above it.
+ */
+const sortFor = (field: Field, order?: number): Record<string, unknown> =>
+  order === undefined || field.meta?.["sort"] !== undefined ? {} : { sort: order };
+
 const OWNED_META: Record<string, unknown> = {
   hidden: false,
   readonly: false,
@@ -72,7 +92,7 @@ const OWNED_META: Record<string, unknown> = {
   validation_message: null,
 };
 
-async function applyField(collection: string, field: Field): Promise<void> {
+async function applyField(collection: string, field: Field, order?: number): Promise<void> {
   const current = await api.get<{ type: string; schema?: { default_value?: unknown } | null }>(`/fields/${collection}/${field.field}`);
   if (current.ok) {
     // The default travels with the meta when it changed: `lineage` went
@@ -88,7 +108,7 @@ async function applyField(collection: string, field: Field): Promise<void> {
     const have = current.data.schema?.default_value;
     const changed = want !== undefined && String(want) !== String(have ?? "");
     const r = await api.patch(`/fields/${collection}/${field.field}`, {
-      meta: { ...OWNED_META, ...(field.meta ?? {}) },
+      meta: { ...OWNED_META, ...sortFor(field, order), ...(field.meta ?? {}) },
       ...(changed ? { schema: { default_value: want } } : {}),
     });
     if (!r.ok) log.fail(`  ${collection}.${field.field} — ${r.error.message}`);
@@ -147,7 +167,7 @@ async function applyCollection(c: Collection): Promise<void> {
   // The PATCH is meta-only: `pk()` declares no default, so `applyField`
   // never sends `schema` for it and never re-issues ALTER COLUMN on a
   // primary key.
-  for (const field of c.fields) await applyField(c.collection, field);
+  for (const [i, field] of c.fields.entries()) await applyField(c.collection, field, i);
 }
 
 /**

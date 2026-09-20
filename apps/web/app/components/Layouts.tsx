@@ -12,7 +12,7 @@
  */
 import { memo } from "react";
 import {
-  BOX_W, BOX_H, HUB, lifespan, initials,
+  BOX_W, BOX_H, HUB, lifespan, initials, fitLabel,
   type BoxNode, type WedgeNode, type CanopyNode, type Branch, type Unit, type Person,
 } from "~/lib/tree";
 
@@ -495,7 +495,7 @@ export const Canopy = memo(function Canopy({
                 ) : null}
               </PersonSymbol>
               <text className="medallion-name" textAnchor="middle" y={n.r + 19} fontSize={13}>
-                {n.person.display_name ?? "—"}
+                {fitLabel(n.person.display_name ?? "—")}
               </text>
               {lifespan(n.person) && (
                 <text className="medallion-years" textAnchor="middle" y={n.r + 34} fontSize={11}>

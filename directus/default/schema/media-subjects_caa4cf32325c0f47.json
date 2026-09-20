@@ -144,7 +144,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 8,
+        "sort": 7,
         "special": null,
         "translations": null,
         "validation": null,
@@ -240,7 +240,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 3,
+        "sort": 2,
         "special": [
           "m2o"
         ],
@@ -290,7 +290,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 4,
+        "sort": 3,
         "special": [
           "m2o"
         ],
@@ -373,7 +373,7 @@
         "readonly": false,
         "required": true,
         "searchable": true,
-        "sort": 2,
+        "sort": 1,
         "special": [
           "m2o"
         ],
@@ -521,7 +521,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 7,
+        "sort": 6,
         "special": null,
         "translations": null,
         "validation": null,
@@ -565,7 +565,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 5,
+        "sort": 4,
         "special": null,
         "translations": null,
         "validation": null,
@@ -609,7 +609,7 @@
         "readonly": false,
         "required": false,
         "searchable": true,
-        "sort": 6,
+        "sort": 5,
         "special": null,
         "translations": null,
         "validation": null,
